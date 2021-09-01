@@ -44,8 +44,45 @@
 
     <h2>figure 태그</h2>
     <figure>
-        <img src="https://cdn.univ20.com/wp-content/uploads/2015/08/d9f309d1951e06b8f6cb027973a55371.jpg" alt="캐릭터 이미지"/>
+        <img width="300px" src="https://cdn.univ20.com/wp-content/uploads/2015/08/d9f309d1951e06b8f6cb027973a55371.jpg" alt="캐릭터 이미지"/>
         <figcaption>귀여운 햄스터를 드리겠습니다.</figcaption>
     </figure>
+    <hr/>
+    <p>사용량은 적지만 알아두면 쓸 일 있을 태그들</p>
+    <h2>abbr 태그</h2>
+    <p>예를들면 <abbr title="Hyper Text Markup Language">HTML</abbr></p>
+    <p>abbr 태그에는 title 속성을 같이 쓴다.<br/>
+        title 속성이 붙으면 마우스 오버시 툴팁이 뜬다.</p>
+
+    <h2>cite 태그</h2>
+    <p>인용의 출처를 표기할 때 쓴다. 크롬에서는 기울림체. <cite>-MDN-</cite></p>
+
+    <h2>b 와 strong</h2>
+    <b>두 태그의 결과물은 동일하나 쓰임은 완전 다르다.</b><br/>
+    <strong>높은 중요도를 가진 부분에 strong 태그를 쓴다. 스크린 리더가 강조해서 읽는다.</strong>
+
+    <h2>i 와 em</h2>
+    <i>이 두 태그도 마찬가지! 목적은 다르나 결과물만 우연히 같다고 생각하자.</i><br/>
+    <em>em 태그도 스크린 리더가 강조해서 읽는다. strong 보단 덜 긴급하고 중요한 내용에 쓴다.</em>
+
+    <h2>code 태그</h2>
+    <code>pre 태그의 인라인 버전이라고 생각하면 쉽다. 고정폭 폰트로 표시된다.</code>
+
+    <h2>a 태그</h2>
+    <a href="#">anchor. 하이퍼링크를 만드는 태그</a>
+    <p>
+        주요 속성 : href(목적지, 경로 뿐만 아니라 이메일이나 전화도 적을 수 있다.), target(그 목적지 띄우는 방법)<br/>
+        <a href="mailto:aa123@gmail.com">aa123@gmail.com</a><br/>
+        <a href="tel:000-0000">000-0000</a><br/>
+        <a href="https://www.naver.com/" target="_blank">네이버 새 창 열기</a>
+        
+    </p>
+
+    <h2>엔티티(Entity)</h2>
+    <p><, >, & 등등 예약어(html 구문의 일부인 문자들)들을 텍스트에 포함하고 싶을 때 사용</p>
+    <p>& + 엔티티 이름 + ; <br/>
+        &quot;현재 태그는 &apos;&lt;p&gt;&apos; 태그 입니다.&quot;<br/>
+        <a href="https://www.w3schools.com/html/html_entities.asp">W3C entity</a> 검색
+    </p>
 </body>
 </html>
