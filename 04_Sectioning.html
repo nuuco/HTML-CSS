@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="nuuco"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section Element - 구조를 나타내는 요소</title>
+</head>
+<body>
+    <header>
+        <h1 title="의미론적인 웹. 요소의 의미를 고려하여, 구조를 설계하고 코드를 작성한다.">시멘틱 웹 : 의미를 해석할 수 있는 웹</h1>
+        <h2>header 영역</h2>
+        <p>웹페이지 내 1개만 사용. &lt;header&gt; 안에 header 나 footer가 들어갈 수 없다. </p>
+        <nav>FrontEnd > HTML > <a href="#">Section Element</a></nav>
+    </header>
+    <hr/>
+    <main>
+        <h2>main 영역</h2>
+        <p>주요 콘텐츠 영역. body 자식 태그로 딱 1개만 사용할 것.<br/>
+            <strong>중요!) IE 11이하를 지원하지 않음</strong>
+        </p>
+        <em>IE 11 이하를 지원해야 할 땐, 이렇게 작성해야한다.</em>
+        <pre>
+
+            &lt;main role="main"&gt;
+                ...    
+            &lt;/main&gt;
+        </pre>
+        
+        <h2>aside 태그</h2>
+        <aside>없어도 메인콘텐츠를 읽는데 문제가 없는 부분을 보통  사이드바로 넣는다.</aside>
+        
+        <h2>article 태그 / section 태그</h2>
+        <article>
+            <h3>article 과 section의 구분?</h3>
+            <p>article이 될 수 있으면 article을 쓰고, 아니면 section을 쓴다.</p>
+            <section>
+                <h4>기준?</h4>
+                <p>이 웹 페이지를 벗어나도 '독립'적으로 쓸 수 있다.(독립성, 재사용성) -> article</p>
+            </section>
+            <section>
+                <h4>둘의 공통점?</h4>
+                <p>서로 포함 가능. 거의 반필수적으로 <b>제목</b>태그 붙여야함.</p>
+            </section>
+        </article>
+        
+    </main>
+    <hr/>
+    <footer>
+        <h2>footer 영역</h2>
+        <p>작성자, 저작권 정보, 관련 문서 등. &lt;footer&gt; 안에 header 나 footer가 들어갈 수 없다. </p>
+        <address>
+            address 태그 : 연락처 정보(이메일, 전화번호, 주소)<br/>
+            <a href="mailto:aaa#naver.com">email : aaa@naver.com</a><br/>
+            <a href="tel:000-0000">tel : 000-0000</a>
+        </address>
+    </footer>
+    <hr/>
+</body>
+</html>
