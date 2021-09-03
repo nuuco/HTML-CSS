@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embadded Element 임베디드 요소</title>
+</head>
+<body>
+    <h1>임베디드 요소</h1>
+    <h2>Image</h2>
+    <p><img src="https://www.sisaweek.com/news/photo/202103/142725_136401_837.jpg" 
+    width="300" alt="쿼카 이미지" title="쿼카는 항상 행복해~"/></p>
+
+    <h3>img 의 srcset, sizes 속성</h3>
+    <p>
+        더 공부 필요...<br/>
+        <img srcset="https://via.placeholder.com/600 600w,
+            https://via.placeholder.com/750 750w,
+            https://via.placeholder.com/900 900w"
+            sizes="(min-width: 900px) 900px,
+            (min-width: 750px) 750px,
+            300px"
+            src="https://via.placeholder.com/300" alt="300px image"/>
+    </p>
+    <h2>Vedeo</h2>
+    <figure>
+        <figcaption>video test</figcaption>
+        <video controls>
+            <source src="./test.webm" type="video/webm"/>
+            <source src="./test.mp4" type="video/mp4"/>
+            동영상 로드에 실패했습니다.
+        </video>
+    </figure>
+
+    <h2>Audio</h2>
+    <figure>
+        <figcaption>audio test</figcaption>
+        <audio src="./audiotest.mp3" controls>
+            오디오 로드에 실패했습니다.
+        </audio>
+    </figure>
+
+    <h2>iframe</h2>
+    <figure>
+        <figcaption>iframe test</figcaption>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/GA9GigGuf24" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </figure>
+</body>
+</html>
