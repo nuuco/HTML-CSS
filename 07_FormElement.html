@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Element 폼 관련 요소</title>
+</head>
+<body>
+    <h1>Form</h1>
+
+    <form action="" method="GET">
+        <!-- text 형태 -->
+        <fieldset>
+            <legend>텍스트 type</legend>
+            <div>
+                <label>
+                    닉네임 :
+                    <input type="text" name="id" minlength="2" maxlength="10" />
+                </label>
+            </div>
+            <div>
+                <label>
+                    이메일 :
+                    <input type="email" name="email">
+                </label>
+            </div>
+            <div>
+                <label>
+                    PW :
+                    <input type="password" name="pw" minlength="6" maxlength="20" />
+                </label>
+            </div>
+            <div>
+                <label>
+                    TEL :
+                    <input type="tel" name="tel" />
+                </label>
+            </div>
+        </fieldset>
+        <!-- number 형태 -->
+        <fieldset>
+            <legend>날짜/숫자 type</legend>
+            <div>
+                <label>
+                    NUMBER : 
+                    <input type="number" name="number"/>
+                </label>
+            </div>
+            <div>
+                <label>
+                    RANGE : 
+                    <input type="range" name="range"/>
+                </label>
+            </div>
+            <div>
+                <label>
+                    DATE : 
+                    <input type="date" name="date"/>
+                </label>
+            </div>
+            <div>
+                <label>
+                    MONTH : 
+                    <input type="month" name="month"/>
+                </label>
+            </div>
+            <div>
+                <label>
+                    WEEK : 
+                    <input type="week" name="week"/>
+                </label>
+            </div>
+            <div>
+                <label>
+                    TIME : 
+                    <input type="time" name="time"/>
+                </label>
+            </div>
+        </fieldset>
+        <!-- etc -->
+        <fieldset>
+            <legend>나머지</legend>
+            <div>
+                <label>
+                    CHECKBOX : 
+                    <input type="checkbox" name="checkbox1" checked>
+                    <input type="checkbox" name="checkbox2">
+                    <input type="checkbox" name="checkbox3">
+                </label>
+            </div>
+            <div>
+                <label>
+                    RADIO : 
+                    <input type="radio" name="radiobtn" value="r1" checked>
+                    <input type="radio" name="radiobtn" value="r2">
+                    <input type="radio" name="radiobtn" value="r3">
+                </label>
+            </div>
+            <input type="submit" value="제출하기">
+            <input type="button" value="빈 버튼">
+            <input type="reset" value="reset">
+        </fieldset>
+        <!-- input 속성들 -->
+        <fieldset>
+            <legend>input 속성들</legend>
+            <div>
+                <div>
+                    <label>
+                        이름 :
+                        <input type="text" name="name" placeholder="홍길동" autocomplete="on" required>
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        나이 :
+                        <input type="number" name="age" value="10" readonly>
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        국적 :
+                        <input type="text" name="country" value="대한민국" disabled>
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        평점 :
+                        <input type="number" name="score" min="-50" max="50" step="10">
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        평점(100점 만점) :
+                        <input type="range" name="scorebar" min="0" max="100" step="10">
+                    </label>
+                </div>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>input 버튼과 button 요소 비교</legend>
+            <div>
+                input 버튼
+                <input type="submit" value="제출하기">
+                <input type="button" value="빈 버튼">
+                <input type="reset" value="reset">
+            </div>
+            <div>
+                button 태그
+                <button type="submit">제출</button>
+                <button type="reset"><strong>초기화</strong></button>
+                <button type="button"><i>일반 버튼</i></button>
+            </div>
+        </fieldset>
+        <!-- select 태그 -->
+        <fieldset>
+            <legend>select 태그</legend>
+            <div>
+                <label for="movie">영화 선택(select)</label>
+                <select name="movie" id="movie">
+                    <option value="">Please choose an option.</option>
+                    <optgroup label="애니메이션">
+                        <option value="zootopia" selected>주토피아</option>
+                        <option value="toystory">토이스토리</option>
+                        <option value="insideout">인사이드 아웃</option>
+                    </optgroup>
+                    <optgroup label="SF">
+                        <option value="matrix">매트릭스</option>
+                        <option value="interstella">인터스텔라</option>
+                    </optgroup>
+                </select>
+                <input type="submit">
+            </div>
+        </fieldset>
+        <!-- datalist 태그 -->
+        <fieldset>
+            <legend>datalist 태그</legend>
+            <label for="movie">영화 선택(datalist)</label>
+            <input type="text" id="movie" name="movie" list="movie-list">
+
+            <datalist id="movie-list">
+                <option>주토피아</option>
+                <option>토이스토리</option>
+                <option>인사이드 아웃</option>
+                <option>매트릭스</option>
+                <option>인터스텔라</option>
+            </datalist>
+        </fieldset>
+        <!-- textarea -->
+        <fieldset>
+            <legend>textarea 태그</legend>
+            <label for="comment">댓글 : </label>
+            <textarea name="comment" id="comment" cols="50" rows="5">
+댓글을 입력하세요.
+비방, 욕설은 공지없이 삭제됩니다.
+            </textarea>
+            <input type="submit">
+        </fieldset>
+    </form>
+
+    
+</body>
+</html>
