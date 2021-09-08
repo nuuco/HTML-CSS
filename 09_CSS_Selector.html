@@ -9,8 +9,29 @@
         h1{
             color: orange;
         }
-        [title]{
+        #selector1{
+            color: red;
+        }
+        .selector2{
+            color: green;
+        }
+        a[title]{
             color:blueviolet;
+        }
+        a[target="_blank"]{
+            color:aquamarine;
+        }
+        a[href^="#s"]{
+            color:brown;
+        }
+        a[href$="org"]{
+            color:yellowgreen;
+        }
+        a[href*="youtube"]{
+            color:teal;
+        }
+        p{
+            text-indent: 20px;
         }
 
 
@@ -20,15 +41,20 @@
     <h1>선택자 Select</h1>
     <h2>Type 선택자</h2>
     <p>태그명</p>
-    <h2>ID 선택자</h2>
-    <p>id명</p>
-    <h2>Class 선택자</h2>
-    <p>class명</p>
+    <h2 id="selector1">ID 선택자</h2>
+    <p>#id명</p>
+    <h2 class="selector2">Class 선택자</h2>
+    <p>.class명</p>
     <h2>속성 선택자</h2>
     <h3 title="속성 선택자, 태그 이름 없어도 됨">[attr]</h3>
-    <h3>[attr="value"]</h3>
-    <h3>[attr^="value"]</h3>
-    <h3>[attr$="value"]</h3>
-    <h3>[attr*="value"]</h3>
+    <p>a[title]</p>
+    <h3><a href="#" target="_blank">[attr="value"]</a></h3>
+    <p>a[target="_blank"]</p>
+    <h3><a href="#selector1">[attr^="value"]</a></h3>
+    <p>a[href^="#s"]</p>
+    <h3><a href="https://developer.mozilla.org">[attr$="value"]</a></h3>
+    <p>a[href$="org"]</p>
+    <h3><a href="https://www.youtube.com/" target="_self">[attr*="value"]</a></h3>
+    <p>a[href*="youtube"]</p>
 </body>
 </html>
