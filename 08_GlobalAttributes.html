@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global attributes</title>
+</head>
+<body>
+    <h1>전역 속성 Global attributes</h1>
+    <p>: 어떤 태그에도 전부 사용할 수 있는 속성</p>
+    <!-- id -->
+    <article id="id">
+        <h2>id 속성</h2>
+        <ul>
+            <li>고유 식별자. 값을 중복해서 쓸 수 없다.</li>
+            <li>id 값 안에 공백이 있어서는 안된다.</li>
+            <li>영어 소문자로 시작해야한다.</li>
+            <li>단어사이에 구분자로 - _ 사용.</li>
+        </ul>
+    </article>
+    <hr/>
+    <article class="class">
+        <h2>class 속성</h2>
+        <ul>
+            <li>중복해서 쓸 수 있다.</li>
+            <li>공백으로 여러 개의 클래스를 넣을 수 있다.</li>
+            <li>class="box bluebox" -> 두 개의 클래스를 가진 것</li>
+            <li>아이디가 이름이라면, 클래스는 별명(여러 개 가능)</li>
+        </ul>
+    </article>
+    <article>
+        <h2 style="color:blueviolet; font-weight:700;">style 속성</h2>
+        <ul>
+            <li>인라인 스타일을 적용시킬 때 사용(태그가 아니다!)</li>
+            <li>유지 보수를 어렵게 만들 수 있음.(우선순위가 높아서)</li>
+            <li>자바스크립트를 통해 일시적으로 스타일을 적용시킬 때 많이 사용</li>
+        </ul>
+    </article>
+    <article title="title 속성을 사용하면 이렇게 툴팁을 띄울 수 있다.">
+        <h2>title 속성</h2>
+        <ul>
+            <li>추가 설명을 툴팁으로 띄울 수 있다.</li>
+            <li>title 값 안은 공백과 개행을 다 인식한다.</li>
+            <li>조상 요소에 title이 있으면 자손 요소에도 툴팁이 적용된다.</li>
+            <li title="자신의 title 속성이 우선된다.">조상 요소에 title 속성이 있어도 자손 요소에 title 속성이 우선이다.</li>
+        </ul>
+    </article>
+    <article lang="ko">
+        <h2>lang 속성</h2>
+        <ul>
+            <li>웹문서를 읽는 사람이 이 콘텐츠를 한글로 읽고 있는지, 영어로 읽고 있는지 명시.</li>
+            <li>페이지 번역할 때 브라우저가 인식하는 속성.</li>
+            <li>스크린 리더가 어떤 언어로 읽을지를 결정함.(웹접근성)</li>
+            <li>조상 요소에 lang 속성을 그대로 상속받는다.(보통 html 태그에 붙이는 속성</li>
+            <li>일부분에 다른 언어가 있으면,그 요소에 lang 속성을 넣어주자. </li>
+            <li lang="en">Please don't go.</li>
+        </ul>
+    </article>
+    <article data-name="임의 속성">
+        <h2>data-* 속성</h2>
+        <ul>
+            <li>속성 이름을 우리가 정의해 줄 수 있다.</li>
+            <li>임의로 속성을 만들 수 있다.</li>
+            <li>자바스크립트 활용 시 사용하는 속성.</li>
+            <li>특정 요소에 자바스크립트가 가져올 내부 정보(화면에 노출X)를 넣어주는 용도</li>
+        </ul>
+    </article>
+    <article draggable="false">
+        <h2>draggable 속성</h2>
+        <ul>
+            <li>드래그가 가능한지 안 한지 정하는 속성</li>
+            <li>불린 속성이 아니다. false, true 값을 입력해 줘야한다.</li>
+            <li>draggable="auto" 기본값</li>
+            <li draggable="true">draggable="true"</li>
+            <li>draggable="false"</li>
+        </ul>
+    </article>
+    <article>
+        <h2>hidden</h2>
+        <ul>
+            <li>불린 속성. hidden 이라고 쓰면 적용됨</li>
+            <li>정말 시각적으로 숨길 때만 사용.</li>
+            <li>보안상의 이유로 숨길 때는 적합하지 않음.(개발자 도구로 다 보임)</li>
+            <li>CSS의 display 속성 값을 변경해 재정의 가능.</li>
+            <li hidden>이 태그는 숨김 처리 되었습니다.</li>
+        </ul>
+    </article>
+
+
+</body>
+</html>
