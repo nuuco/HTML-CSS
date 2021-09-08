@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상 클래스 선택자 Pseudo Class Selector</title>
+    <style>
+        strong{
+            color: red;
+            font-weight: 700;
+        }
+
+        .parent li:first-child{
+            color: orange;
+        }
+        .parent li:last-child{
+            color: green;
+        }
+        .parent li:nth-child(2){
+            color: purple;
+        }
+        .parent li:nth-child(3){
+            color: pink;
+        }
+
+        .brother:first-child{
+            color: orange;
+        }
+        .brother:last-child{
+            color: green;
+        }
+        .brother:nth-child(2){
+            color: purple;
+        }
+        .brother:nth-child(3){
+            color: pink;
+        }
+
+        .nth li:nth-child(2n-1){
+            color:blue;
+        }
+        .nth li:nth-child(2n){
+            color:yellowgreen;
+        }
+
+        /*--------------------*/
+
+        .parent li:first-of-type{
+            color: orange;
+        }
+        .parent li:last-of-type{
+            color: green;
+        }
+        .parent li:nth-of-type(2){
+            color: purple;
+        }
+        .parent li:nth-of-type(3){
+            color: pink;
+        }
+
+        .brother:first-of-type{
+            color: orange;
+        }
+        .brother:last-of-type{
+            color: green;
+        }
+        .brother:nth-of-type(2){
+            color: purple;
+        }
+        .brother:nth-of-type(3){
+            color: pink;
+        }
+
+        .nth li:nth-of-type(2n-1){
+            color:blue;
+        }
+        .nth li:nth-of-type(2n){
+            color:yellowgreen;
+        }
+
+        .type li:first-of-type{
+            color:red;
+        }
+        .type-brother:first-of-type{
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>가상 클래스 선택자</h1>
+    
+    <section>
+        <h2> first-child, last-child, nth-child(n)</h2>
+        찾는 순서 :
+        <ol> 
+            <li>가상 클래스가 붙기 전 선택 요소 파악</li>
+            <li>해당 요소들의 형제 요소 파악</li>
+            <li>형제 요소 내에서 몇번째 요소인지 파악</li>
+            <li>내가 쓴 nth-child와 n번째가 일치하는 확인</li>
+        </ol>
+        <strong>주의!) "선택된 애들" 중에 n번째가 아니다! "형제 요소" 중에 n번째다!</strong>
+        <ul class="parent">
+            <li>first-child</li> 
+            <li>nth-child(2)</li>
+            <li>nth-child(3)</li>
+            <li>last-child</li>
+        </ul>
+    </section>
+    <section>
+        <h3>cf ) 선택된 요소에 첫번째 요소가 없으면?</h3>
+        <p>first-child가 아예 적용되지 않는다.</p>
+        <p>last-child와 nth-child 도 해당 형제 요소가 선택되지 않았으면 아예 적용되지 않는다.</p>
+        <ul>
+            <li>first-child 적용한거임.</li> 
+            <li class="brother">nth-child(2)</li>
+            <li class="brother">nth-child(3)</li>
+            <li class="brother">last-child</li>
+        </ul>
+    </section>
+    <section>
+        <h3>cf ) nth-child(n)</h3>
+        <p>()안에 n 을 매개변수로 활용해 함수를 넣을 수 있다.</p>
+        <p>nth-child(2n) : 짝수만 선택 (even) / (2n-1) : 홀수만(odd)</p>
+        <ul class="nth">
+            <li>first-child</li> 
+            <li>nth-child(2)</li>
+            <li>nth-child(3)</li>
+            <li>last-child</li>
+        </ul>
+    </section>
+    <hr/>
+    <!-- nth-of-type -->
+    <section>
+        <h2>first-of-type, last-of-type, nth-of-type(n)</h2>
+        찾는 순서 :
+        <ol> 
+            <li>가상 클래스가 붙기 전 선택 요소 파악</li>
+            <li>해당 요소들의 형제 요소 파악</li>
+            <li>형제 요소 중 같은 태그(type) 내에서 몇번째 요소인지 파악</li>
+            <li>내가 쓴 nth-of-type과 n번째가 일치하는 확인</li>
+        </ol>
+        <strong>주의!) "선택된 애들" 중에 n번째가 아니다! "형제 요소" 중 "같은 type(태그)" 중에 n번째다!</strong>
+        <ul class="parent">
+            <li>first-of-type</li> 
+            <li>nth-of-type(2)</li>
+            <li>nth-of-type(3)</li>
+            <li>last-of-type</li>
+        </ul>
+    </section>
+    <section>
+        <h3>cf ) 선택된 요소에 첫번째 요소가 없으면?</h3>
+        <p>first-of-type가 아예 적용되지 않는다.</p>
+        <p>last-of-type와 nth-of-type 도 해당 형제 요소가 선택되지 않았으면 아예 적용되지 않는다.</p>
+        <ul>
+            <li>first-of-type 적용한거임.</li> 
+            <li class="brother">nth-of-type(2)</li>
+            <li class="brother">nth-of-type(3)</li>
+            <li class="brother">last-of-type</li>
+        </ul>
+    </section>
+    <section>
+        <h3>cf ) nth-of-type(n)</h3>
+        <p>()안에 n 을 매개변수로 활용해 함수를 넣을 수 있다.</p>
+        <p>nth-of-type(2n) : 짝수만 선택 (even) / (2n-1) : 홀수만(odd)</p>
+        <ul class="nth">
+            <li>first-of-type</li> 
+            <li>nth-of-type(2)</li>
+            <li>nth-of-type(3)</li>
+            <li>last-of-type</li>
+        </ul>
+    </section>
+    <section>
+        <h3>cf ) 만약 선택된 요소들의 형제 요소에 다른 태그(type)가 섞여있다면?</h3>
+        <p>다른 태그 형제들은 무시하고 해당 태그(type) 중에서 첫번째 자식들이 선택된다.</p>
+        <ul class="type">
+            <div>div 태그 1</div> 
+            <li>li 태그 1</li>
+            <div>div 태그 2</div>
+            <li>li 태그 2</li>
+        </ul>
+    </section>
+    <section>
+        <h3>cf ) 만약 선택된 요소들 중에 여러 태그(type)가 섞여있다면?</h3>
+        <p>각 태그의 형제들 중에서 첫번째 자식들이 선택된다.</p>
+        <ul>
+            <div class="type-brother">div 태그 1</div> 
+            <li class="type-brother">li 태그 1</li>
+            <div class="type-brother">div 태그 2</div>
+            <li class="type-brother">li 태그 2</li>
+        </ul>
+    </section>
+
+</body>
+</html>
