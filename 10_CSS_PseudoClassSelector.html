@@ -86,10 +86,13 @@
             color: red;
         }
 
+        .parent input:not([title],[type="submit"]){
+            background-color: pink;
+        }
     </style>
 </head>
 <body>
-    <h1>가상 클래스 선택자</h1>
+    <h1>가상 클래스 선택자1</h1>
     
     <section>
         <h2> first-child, last-child, nth-child(n)</h2>
@@ -172,7 +175,7 @@
         </ul>
     </section>
     <section>
-        <h3>cf ) 만약 선택된 요소들의 형제 요소에 다른 태그(type)가 섞여있다면?</h3>
+        <h3>cf ) 만약 선택된 요소들의 선택되지 않은 형제 요소에 다른 태그(type)가 섞여있다면?</h3>
         <p>다른 태그 형제들은 무시하고 해당 태그(type) 중에서 첫번째 자식들이 선택된다.</p>
         <ul class="type">
             <div>div 태그 1</div> 
@@ -191,6 +194,16 @@
             <li class="type-brother">li 태그 2</li>
         </ul>
     </section>
+    <!-- not -->
+    <section>
+        <h2>not</h2>
+        <form class="parent">
+            <input title="닉네임" type="text" placeholder="name"><br/>
+            <input type="email" placeholder="email"><br/>
+            <input type="password" placeholder="비밀번호를 입력하세요.">
+            <input type="submit">
+        </form>
 
+    </section>
 </body>
 </html>
