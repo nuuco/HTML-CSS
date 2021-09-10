@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PseudoClass Selector2</title>
+    <style>
+        .parent a,
+        .parent input{
+            display: block;
+        }
+        .parent a:link{
+            color: tomato;
+        }
+        .parent a:visited{
+            color: purple;
+        }
+
+        .parent input:hover{
+            background-color: yellow;
+        }
+        .parent input[type="text"]:focus{
+            background-color: skyblue;
+        }
+        .parent input:active{
+            background-color: orange;
+        }
+
+        .enabled input[type="text"]:enabled{
+            background-color: yellowgreen;
+        }
+        .disabled input[type="text"]:disabled{
+            background-color: skyblue;
+        }
+        .checked input:checked{
+            outline: 3px solid pink;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>동적 가상 클래스 선택자</h1>
+    <p>html 요소의 상태에 따라 스타일링을 변경할 수 있는 선택자.</p>
+    <p>요소는 하나인데, 사용자의 동작에 따라 다른 스타일링 할 수 있다.</p>
+    
+    <section>
+        <h2>link, visited</h2>
+        <div class="parent">
+            <a href="#">Example Link1</a>
+            <a href="#somewhere">Example Link2</a>
+        </div>
+    </section>
+    <section>
+        <h2>hover, active, focus</h2>
+        <div class="parent">
+            <input type="button" value="저를 클릭하세요!">
+            <input type="button" value="저를 클릭하세요!">
+            <input type="button" value="저를 클릭하세요!">
+            <input type="button" value="저를 클릭하세요!">
+            <input type="button" value="저를 클릭하세요!">
+            <input type="button" value="저를 클릭하세요!">
+            <input type="text">
+        </div>
+    </section>
+    <section>
+        <h2>enabled, disabled, checked</h2>
+        <div class="enabled">
+            <input type="text" placeholder="1">
+            <input type="text" placeholder="2">
+            <input type="text" placeholder="3" disabled>
+        </div>
+        <div class="disabled">
+            <input type="text" placeholder="1">
+            <input type="text" placeholder="2">
+            <input type="text" placeholder="3" disabled>
+        </div>
+        <div class="checked">
+            <input type="radio" name="my-input" id="yes">
+            <label for="yes">Yes</label>
+
+            <input type="radio" name="my-input" id="no" checked>
+            <label for="no">No</label>
+        </div>
+        <div class="checked">
+            <input type="checkbox" name="check-me" id="check-me">
+            <label for="check-me">Check me!</label>
+        </div>
+    </section>
+</body>
+</html>
