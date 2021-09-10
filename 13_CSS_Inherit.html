@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상속 제어하기 - initial, inherit, unset</title>
+    <style>
+        div{
+            border: 3px solid lightsalmon;
+            margin: 10px;
+            padding: 10px;
+            font-size: 20px;
+        }
+        .parent1{
+            color: olive;
+            font-weight: 700;
+            font-family: 'Times New Roman', Times, serif;
+            text-decoration: underline; 
+        }
+        
+        .child2{
+            color: initial;
+        }
+        .child3{
+            all: initial;
+            /*border 값까지 다 없어짐. 모든 속성의 상속된 값 다 초기화*/
+        }
+
+        .parent2{
+            color: blue;
+        }
+        .child2-2 {
+            color: rgb(196, 196, 196);
+        }
+        .parent2 *{
+            all: inherit;
+        }
+
+        .parent3{
+            color: magenta;
+        }
+        .parent3 .child3-2{
+            all: unset;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>상속 제어하기</h1>
+    <h2>initial</h2>
+    <div class="parent1">
+        parent
+        <div class="child1">child1</div>
+        <div class="child2">child2</div>
+        <div class="child3">child3</div>
+    </div>
+    <h2>inherit</h2>
+    <div class="parent2">
+        parent
+        <div class="child2-1">child1</div>
+        <div class="child2-2">child2</div>
+        <div class="child2-3">child3</div>
+    </div>
+    <h2>unset</h2>
+    <div class="parent3">
+        parent
+        <div class="child3-1">child1</div>
+        <div class="child3-2">child2</div>
+        <div class="child3-3">child3</div>
+    </div>
+</body>
+</html>
