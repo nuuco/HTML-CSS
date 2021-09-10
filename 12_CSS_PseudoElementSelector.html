@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo Element Selector</title>
+    <style>
+        .movie::before{
+            content: "Movie";
+            color: lightgray;
+        }
+        .favorit::after{
+            content: "**";
+            color: orange;
+        }
+
+        .lorem::first-letter{
+            color: red;
+            font-size: 30px;
+        }
+        .lorem::before{
+            content: "before";
+        }
+
+        .lorem::first-line{
+            background-color: aqua;
+        }
+        .lorem::selection{
+            background-color: blueviolet;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>가상 요소 선택자</h1>
+    <!-- 
+        Pseudo-Class Selector 가상 클래스 선택자
+        -> selector:_____
+
+        Pseudo-Element Selector 가상 요소 선택자
+        -> selector::____ (css3 권고안)
+        -> selectot:____ (문제없이 동작하긴 함)
+     -->
+     <section>
+         <h2>before, after</h2>
+         <div class="movie">ToyStory</div>
+         <div class="movie favorit">Zootopia</div>
+         <div class="movie">InsideOut</div>
+         <div class="movie favorit">Coco</div>
+         <div class="movie">Finding Nemo</div>
+     </section>
+
+     <section>
+        <h2>first-letter, first-line, selection</h2>
+        <div>
+            <p class="lorem">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto nostrum nihil eaque sunt, dicta excepturi inventore, provident perspiciatis illum eius debitis adipisci iure voluptas quisquam deleniti consequuntur non quia voluptates.
+            </p>
+            <p class="lorem">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, reprehenderit amet quaerat suscipit officiis, minus, nihil consequatur distinctio tenetur nisi omnis obcaecati iure cumque in? Enim consequuntur temporibus at facere!
+            </p>
+            <p class="lorem">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate placeat repellat rem praesentium optio cumque minus porro consectetur corporis. Tempora maiores provident sint iusto praesentium dignissimos in, dolorem quis consequuntur?
+            </p>
+        </div>
+     </section>
+
+</body>
+</html>
