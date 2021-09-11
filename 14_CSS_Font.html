@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폰트 관련 속성</title>
+    <style>
+        .default{
+            font-size: 20px; /*font 단축 속성에서 필수*/
+            font-family:'Times New Roman', Times, serif; /*font 단축 속성에서 필수*/
+            line-height: 1.7;
+            font-weight: 700;
+            font-style: italic;
+        }
+        .shorthand{
+            color: red;
+            font: italic 700 20px/1.7 'Times New Roman', Times, serif;
+            /* 안 쓸 경우 초기값(initial)을 사용하게 됩니다. */
+        }
+
+        .ls{
+            letter-spacing: 2px;
+        }
+        .ws{
+            word-spacing: 5px;
+        }
+        .text,
+        .ta{
+            font-size: 20px;
+            font-weight: 700;
+            background-color: burlywood;
+        }
+        .ta{
+            text-align: center;
+        }
+        .container{
+            text-align: center;
+        }
+        .indent{
+            text-indent: 50px;
+        }
+        .indent p:last-child{
+            text-indent: 50%;
+        }
+
+        .td{
+            font-size: 50px;
+            color: purple;
+            text-decoration: underline overline orange 3px wavy;
+        }
+
+        .wb p{
+            width: 200px;
+            font-size: 20px;
+            background-color: lightpink;
+        }
+        .wb .nomal{
+            word-break: nomal;
+        }
+        .wb .break p[lang="en"]{
+            word-break: break-all;
+        }
+        .wb .break p[lang="ko"]{
+            word-break: keep-all;
+        }
+
+        .capital{
+            text-transform: capitalize;
+        }
+        .upper{
+            text-transform: uppercase;
+        }
+        .lower{
+            text-transform: lowercase;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>폰트 관련 속성</h1>
+    <section>
+        <h2>font shorthand</h2>
+        <p class="default">
+            Lorem ipsum dolor sit amet
+        </p>
+        <p class="shorthand">
+            Lorem ipsum dolor sit amet
+        </p>
+    </section>
+    <hr/>
+    <section>
+        <h2>letter-spacing, word-spacing</h2>
+        <p class="ls">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem ipsam impedit quis, amet exercitationem distinctio molestias eius placeat eos ut alias facilis a magnam aut laudantium! Autem qui neque officiis?
+        </p>
+        <p class="ws">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, voluptatum incidunt? Exercitationem fuga minima molestias perferendis animi totam ea dignissimos sapiente? Nemo vitae deserunt maiores ratione architecto itaque, nisi numquam.
+        </p>
+    </section>
+    <hr/>
+    <section>
+        <h2>text-align</h2>
+        <p class="text">
+            Lorem ipsum dolor
+        </p>
+        <p class="ta">
+            Lorem ipsum dolor
+        </p>
+        <span class="ta">inline element</span>
+        <div class="container">
+            <span class="ta">inline element</span>
+        </div>
+    </section>
+    <hr/>
+    <section>
+        <h2>text-indent 들여쓰기</h2>
+        <div class="indent">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus amet officiis velit voluptatum exercitationem quisquam aperiam autem accusamus, similique ullam. Ullam enim quidem quis officiis error? Quod harum blanditiis alias.
+            </p>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est nam sed voluptate culpa! Labore, iure. Quos beatae quam iusto officia nisi! Pariatur obcaecati modi quia doloribus alias amet veritatis perferendis!
+            </p>
+        </div>
+    </section>
+    <hr/>
+    <section>
+        <h2>text-decoration</h2>
+        <span class="td">안녕하세요!</span>
+    </section>
+    <hr/>
+    <section>
+        <h2>word-break</h2>
+        <div class="wb">
+            <div class="nomal">
+                기본값
+                <p lang="en">
+                    aaaaaaaa aaaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                </p>
+                <p lang="ko">
+                    가나다라마바사아자차가파하에헤이에헤이에헤이
+                </p>
+            </div>
+            <div class="break">
+                break-all
+                <p lang="en">
+                    aaaaaaaa aaaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                </p>
+                keep-all
+                <p lang="ko">
+                    가나다라마바사아자차가파하에헤이에헤이에헤이
+                    가나다라마바사아자 차가파하 에헤이에헤이에헤이
+                </p>
+            </div>
+        </div>
+    </section>
+    <hr/>
+    <section>
+        <h2>text-transform</h2>
+        capitalize
+        <p class="capital">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. In, numquam laudantium dolorum repellat exercitationem velit quae tenetur explicabo eius, quaerat est nostrum maxime ipsam, dolorem beatae voluptas iste sed fugit?
+        </p>
+        uppercase
+        <p class="upper">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae iusto maxime soluta nesciunt quibusdam amet vel voluptate doloremque quaerat cupiditate similique ea inventore, incidunt et cumque itaque pariatur quas vero?
+        </p>
+        lowercase
+        <p class="lower">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, quam ipsum. Eligendi beatae reprehenderit necessitatibus maxime, officiis impedit pariatur sint rem porro? A, nihil beatae odio illo sit quos voluptatum!
+        </p>
+    </section>
+    <hr/>
+</body>
+</html>
