@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>단위와 값 units and values</title>
+    <style>
+        div{
+            border: 2px solid salmon;
+        }
+        .parent{
+            font-size: 20px;
+            background-color: bisque;
+            width: 50vw;
+            height: 50vh;
+        }
+        .child{
+            font-size: 2em; /*= 200%, %단위로 써도 된다.*/
+        }
+        .box{
+            background-color: pink;
+            width: 100vmin;
+        }
+        .parent-box{
+            background-color: blue;
+            margin: 20px;
+            width: 50%;
+            height: 300px;
+        }
+        .child-box{
+            background-color: yellow;
+            width: 50%;
+            height: 50%;
+        }
+        .calc-box{
+            background-color: aquamarine;
+            width: calc(100% / 3);
+            height: calc(100% - 5em);
+        }
+        .minmax{
+            background-color: azure;
+            width: min(100px, 50%, 15em);
+            height: max(30%, 50px);
+        }
+
+    </style>
+</head>
+<body>
+    <h1>단위와 값</h1>
+    <section class="box">
+        <h2>em, rem</h2>
+        <div class="nomal">
+            안녕하세요. 만나서 반가워요:)
+        </div>
+        <div class="parent">
+            안녕하세요. 만나서 반가워요:)
+            
+            <div class="child">
+                안녕하세요. 만나서 반가워요:)
+
+            </div>
+        </div>
+    </section>
+    <div class="parent-box">
+        <div class="child-box">
+            퍼센트 단위는 부모 요소에 대한 비율이다.
+
+        </div>
+    </div>
+    <div class="parent-box">
+        <div class="calc-box">
+            <pre>width: calc(100% / 3);
+height: calc(100% - 5em);</pre>
+</div>
+</div>
+<div class="parent-box">
+    <div class="minmax">
+            <pre>width: min(100px, 50%, 15em);
+height: max(30%, 50px);</pre>
+
+        </div>
+    </div>
+</body>
+</html>

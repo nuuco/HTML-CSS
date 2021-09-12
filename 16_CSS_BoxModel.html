@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>박스 모델</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .block{
+            background-color: tomato;
+
+        }
+        .inline{
+            background-color: pink;
+        }
+        .container{
+            border: 5px solid pink;
+            margin: 20px;
+        }
+        .box1{
+            background-color: tomato;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            width: 100px;
+            height: 100px;
+        }
+        .parent{
+            background-color: blue;
+            width: 300px;
+            height: 300px;
+            /*padding: 1px;*/
+        }
+        .child{
+            background-color: salmon;
+            width: 100px;
+            height: 100px;
+            margin-top: 100px;
+        }
+        .content-box{
+            background-color: skyblue;
+            width: 300px;
+            height:300px;
+            border: 50px solid blue;
+            margin: 0 auto;
+        }
+        .border-box{
+            box-sizing: border-box;
+            background-color: pink;
+            width: 300px;
+            height: 300px;
+            border: 50px solid tomato;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>박스 모델 Box Model</h1>
+    <div class="block">block element</div>
+    <span class="inline">inline element</span>
+    
+    <h2>margin collapsing</h2>
+    <div class="container">
+        <div class="box1"></div>
+        <div class="box1"></div>
+        <div class="box1"></div>
+    </div>
+
+    <h2>margin collapsing2</h2>
+    <div class="container">
+        <div class="parent">
+            <div class="child">
+
+            </div>
+        </div>
+    </div>
+    <h2>box-sizing</h2>
+    <div class="container">
+        <div class="content-box">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime dolor minus excepturi, omnis quisquam autem recusandae velit necessitatibus error asperiore
+            <br/>콘텐츠 : 300px (width, height)
+            <br/>테두리 : 50px
+            <br/>전체가로길이 : 300 - 50*2 = 400px
+        </div>
+        <div class="border-box">
+            Lorem ipsum dolor sit amet cons
+            <br/>콘텐츠 : 200px
+            <br/>테두리 : 50px
+            <br/>전체가로길이 : 300px  (width, height)
+        </div>
+    </div>
+</body>
+</html>
