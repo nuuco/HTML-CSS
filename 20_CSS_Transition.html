@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transition</title>
+    <style>
+        .box{
+            width: 300px;
+            height: 60px;
+            background-color: darkcyan;
+            font-size: 40px;
+            color: white;
+            text-align: center;
+
+            transition-property: all;
+            transition-duration: 1s;
+            transition-delay: 0.5s;
+            transition-timing-function: ease-in;
+            /*transition: all 1s 0.5s ease-in*/
+        }
+
+        .box:hover{
+            background-color: salmon;
+            color: black;
+            font-size: 60px;
+            height: 400px;
+        }
+        .timing .long{
+            width: 200px;
+            height: 60px;
+            background-color: salmon;
+            margin-bottom: 5px;
+            padding-left: 10px;
+            color: white;
+            transition: all 3s;
+        }
+        .long:nth-child(1){
+            transition-timing-function: ease;
+        }
+        .long:nth-child(2){
+            transition-timing-function: ease-in;
+        }
+        .long:nth-child(3){
+            transition-timing-function: ease-out;
+        }
+        .long:nth-child(4){
+            transition-timing-function: ease-in-out;
+        }
+        .long:nth-child(5){
+            transition-timing-function: linear;
+        }
+        .long:nth-child(6){
+            transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+        .long:hover{
+            width: 100%;
+            background-color: darkmagenta;
+        }
+
+        .box2{
+            width: 100px;
+            height: 100px;
+            border: 10px solid orange;
+            margin-bottom: 300px;
+            background-color: rgb(245, 233, 166);
+            border-radius: 50px;
+            transition: all 1s ease-in-out;
+            transform-origin: bottom right;
+        }
+        .box2:hover{
+            transform: rotate(360deg) translate(0, 30px);
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Transition</h1>
+    <div class="box">
+        Hover Me!
+    </div>
+
+    <hr/>
+    <h2>transition-timing-function</h2>
+    <section class="timing">
+        <div class="long">ease</div>
+        <div class="long">ease-in</div>
+        <div class="long">ease-out</div>
+        <div class="long">ease-in-out</div>
+        <div class="long">linear</div>
+        <div class="long">cubic-bezier(0.075, 0.82, 0.165, 1));</div>
+    </section>
+    <hr/>
+    <section>
+        <h2>transition + transform</h2>
+        <div class="box2">
+            Hover Me!
+        </div>
+    </section>
+</body>
+</html>
