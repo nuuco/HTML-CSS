@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trasform</title>
+    <style>
+        .container{
+            background-color: bisque;
+            display: inline-block;
+        }
+        .box{
+            background-color: aliceblue;
+        }
+        .img1{
+            transform: scale(0.5);
+        }
+        .img2{
+            transform: rotate(45deg) scale(0.5); /*(= 0.25turn)*/
+        }
+        .img3{
+            transform: translate(-100px,20px);
+        }
+        .container2{
+            display: inline-block;
+            margin-left: 50px;
+            border: 5px solid salmon;
+        }
+        .img4{
+            vertical-align: bottom;
+            transform: skew(30deg, 20deg);
+        }
+        .img5{
+            vertical-align: bottom;
+            transform: scale(0.5) rotate(30deg);
+            transform-origin: top left;
+        }
+    </style>
+</head>
+<body>
+    <h1>Transform</h1>
+    <section>
+        <h2>scale()</h2>
+        <div class="container">
+            <img class="img1" src="http://lorempixel.com/300/300/cats/" alt="http://lorempixel.com/200/200/cats/">
+        </div>
+        바로 다음 요소
+        <div class="box">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum earum blanditiis nulla repellat, debitis dolores perspiciatis dolore illum magni suscipit, impedit molestiae sed cumque, asperiores tempora itaque ipsa numquam veniam?
+        </div>
+    </section>
+    <hr/>
+    <section>
+        <h2>rotate()</h2>
+        <div class="container">
+            <img class="img2" src="http://lorempixel.com/300/300/cats/" alt="http://lorempixel.com/200/200/cats/">
+        </div>
+        바로 다음 요소
+        <div class="box">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum earum blanditiis nulla repellat, debitis dolores perspiciatis dolore illum magni suscipit, impedit molestiae sed cumque, asperiores tempora itaque ipsa numquam veniam?
+        </div>
+    </section>
+    <hr/>
+    <section>
+        <h2>translate()</h2>
+        <div class="container">
+            <img class="img3" src="http://lorempixel.com/300/300/cats/" alt="http://lorempixel.com/200/200/cats/">
+        </div>
+        바로 다음 요소
+        <div class="box">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum earum blanditiis nulla repellat, debitis dolores perspiciatis dolore illum magni suscipit, impedit molestiae sed cumque, asperiores tempora itaque ipsa numquam veniam?
+        </div>
+    </section>
+    <hr/>
+    <section>
+        <h2>skew()</h2>
+        <div class="container2">
+            <img class="img4" src="http://lorempixel.com/300/300/cats/" alt="http://lorempixel.com/200/200/cats/">
+        </div>
+        바로 다음 요소
+        <div class="box">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum earum blanditiis nulla repellat, debitis dolores perspiciatis dolore illum magni suscipit, impedit molestiae sed cumque, asperiores tempora itaque ipsa numquam veniam?
+        </div>
+    </section>
+    <hr/>
+    <section>
+        <h2>transform-origin</h2>
+        <div class="container2">
+            <img class="img5" src="http://lorempixel.com/300/300/cats/" alt="http://lorempixel.com/200/200/cats/">
+        </div>
+        바로 다음 요소
+        <div class="box">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum earum blanditiis nulla repellat, debitis dolores perspiciatis dolore illum magni suscipit, impedit molestiae sed cumque, asperiores tempora itaque ipsa numquam veniam?
+        </div>
+    </section>
+    <hr/>
+</body>
+</html>
