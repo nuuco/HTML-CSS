@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃</title>
+    <style>
+        .box{
+            width: 300px;
+            height: 100px;
+            border: 3px solid salmon;
+        }
+        .box1{
+            background-color: pink;
+        }
+        .box2{
+            background-color: yellowgreen;
+            visibility: hidden;
+            /*display: none;*/
+        }
+        .box3{
+            background-color: skyblue;
+        }
+
+        .image{
+            background-color: orange;
+            width: 80px;
+            height: 80px;
+            float: left;
+            margin: 10px;
+        }
+        .lorem{
+            background-color: skyblue;
+        }
+
+        .position .b2{
+            position: relative;
+            top: 50px;
+            /*bottom: 50px;*/
+            left: 50px;
+        }
+        .ab{
+            position: relative;
+        }
+        .ab .b2{
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+        .fixed .b2{
+            position: fixed;
+            background-color: blueviolet;
+            top: 0;
+            right: 0;
+        }
+        .sticky .con{
+            width: 200px;
+            height: 200px;
+            background-color: aliceblue;
+            border: 5px solid blue;
+        }
+        .sticky .parent {
+            position: sticky;
+            top: 50px;
+            left: 50px;
+        }
+        .sticky .child{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            border: 5px solid salmon;
+            border-radius: 50%;
+            margin: auto;
+        }
+        .container{
+            width: 250px;
+            height: 200px;
+            padding: 20px;
+            background-color: papayawhip;
+            border: 3px dotted tomato;
+        }
+        .hidden{
+            overflow: hidden;
+        }
+        .scroll{
+            overflow: scroll;
+            margin-bottom: 30px;
+            margin-right: 10px;
+            float: left;
+        }
+        .auto {
+            clear: both;
+            overflow: auto;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Layout</h1>
+
+    <section>
+        <h2>display: none, visibility: hidden</h2>
+
+        <div class="box box1">box1</div>
+        <div class="box box2">box2</div>
+        <div class="box box3">box3</div>
+    </section>
+    <hr/>
+    <section>
+        <h2>float</h2>
+        <div class="image"></div>
+        <p class="lorem">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla eius sint voluptas, recusandae dolor debitis animi beatae unde? Laboriosam libero vero dolore voluptates aspernatur, cumque quas! Adipisci sapiente eveniet perspiciatis.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime nisi explicabo atque consectetur? Libero architecto maxime iure velit excepturi autem optio doloribus dignissimos quas repellendus. Deleniti minus fuga excepturi sapiente?
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Labore asperiores in itaque odio placeat. Ex laborum repellat nulla sunt nam illo praesentium, maxime omnis libero ut mollitia veritatis ad repellendus.
+        </p>
+    </section>
+    <hr/>
+    <section class="position">
+        <h2>position: relative</h2>
+        <div class="box b1">box1</div>
+        <div class="box b2">box2</div>
+        <div class="box b3">box3</div>
+    </section>
+    <hr/>
+    <section class="ab">
+        <h2>position: absolute</h2>
+        <div class="box b1">box1</div>
+        <div class="box b2">box2 - position: absolute</div>
+        <div class="box b3">box3</div>
+    </section>
+    <hr/>
+    <section class="fixed">
+        <h2>position: fixed</h2>
+        <div class="box b1">box1</div>
+        <div class="box b2">box2 - position: fixed</div>
+        <div class="box b3">box3</div>
+    </section>
+    <hr/>
+    <section class="sticky">
+        <h2>position: sticky</h2>
+        <div class="con">con1</div>
+        <div class="con parent">con2 - position: sticky
+            <div class="child"></div>
+        </div>
+        <div class="con">con3</div>
+        <div class="con">con4</div>
+        <div class="con">con5</div>
+        <div class="con">con6</div>
+        <div class="con">con7</div>
+        <div class="con">con8</div>
+        <div class="con">con9</div>
+        <div class="con">con10</div>
+    </section>
+    <hr/>
+    <section>
+        <h2>overflow</h2>
+        <div class="container">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis fugit culpa est possimus esse commodi consectetur ex labore, autem laudantium velit atque quos vel? Nisi repellat praesentium incidunt laudantium autem.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et possimus laboriosam consectetur quibusdam voluptatum laudantium sint enim? Porro facere aperiam natus velit quo, quisquam neque iure ipsum, perferendis id deleniti.
+        </div>
+        <div>
+            <h3>이건 그냥 다음 요소</h3>
+            <h3>넘치는 부분은 그냥 겹침</h3>
+            <h3>넘치는 부분은 그냥 겹침</h3>
+        </div>
+        <h3>overflow:hidden;</h3>
+        <div class="container hidden">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis fugit culpa est possimus esse commodi consectetur ex labore, autem laudantium velit atque quos vel? Nisi repellat praesentium incidunt laudantium autem.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et possimus laboriosam consectetur quibusdam voluptatum laudantium sint enim? Porro facere aperiam natus velit quo, quisquam neque iure ipsum, perferendis id deleniti.
+        </div>
+        <h3>overflow:scroll;</h3>
+        <div class="container scroll">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis fugit culpa est possimus esse commodi consectetur ex labore, autem laudantium velit atque quos vel? Nisi repellat praesentium incidunt laudantium autem.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et possimus laboriosam consectetur quibusdam voluptatum laudantium sint enim? Porro facere aperiam natus velit quo, quisquam neque iure ipsum, perferendis id deleniti.
+        </div>
+        <div class="container scroll">
+            내용물이 안 넘쳐도 스크롤이 생긴다...
+        </div>
+        <h3 class="auto">overflow:auto;</h3>
+        <div class="container auto">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis fugit culpa est possimus esse commodi consectetur ex labore, autem laudantium velit atque quos vel? Nisi repellat praesentium incidunt laudantium autem.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et possimus laboriosam consectetur quibusdam voluptatum laudantium sint enim? Porro facere aperiam natus velit quo, quisquam neque iure ipsum, perferendis id deleniti.
+        </div>
+    </section>
+</body>
+</html>
