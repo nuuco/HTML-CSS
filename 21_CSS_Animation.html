@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animaiton</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            border: 10px solid salmon;
+            background-color: pink;
+            border-radius: 30%;
+            text-align: center;
+
+            
+        }
+        .box:nth-child(1){
+            animation: animate 2s infinite alternate;
+            /* 가장 길게 사용하면 8개
+                @keyframes duration | timing-function | delay |
+                iteration-count | direction | fill-mode | play-state | name 
+            */
+            animation-delay: 0;
+        }
+        .box:nth-child(2){
+            animation: animate 2s infinite alternate;
+            animation-delay: 1s;
+        }
+        .box:nth-child(3){
+            animation: animate 2s infinite alternate;
+            animation-delay: -1s;
+        }
+
+        
+        .box:nth-child(3):hover{
+            animation: animate2 3s infinite alternate;
+        }
+        .box2{
+            width: 100px;
+            height: 100px;
+            border: 10px solid orange;
+            border-radius: 20px;
+            background-color: lemonchiffon;
+            text-align: center;
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+        .box2:nth-child(1){
+            animation: smileRun 2s ease infinite normal;
+        }
+        
+        .box2:nth-child(2){
+            animation: smileRun 2s ease infinite normal;
+            animation-direction: reverse;
+        }
+        
+        .box2:nth-child(3){
+            animation: smileRun 2s ease infinite normal;
+            animation-direction: alternate;
+        }
+        
+        .box2:nth-child(4){
+            animation: smileRun 2s ease infinite normal;
+            animation-direction: alternate-reverse;
+        }
+        .box2:hover{
+            animation-play-state: paused;
+        }
+        
+        .box3{
+            width: 100px;
+            height: 100px;
+            border: 10px solid skyblue;
+            border-radius: 20px;
+            background-color: aliceblue;
+            text-align: center;
+            font-size: 60px;
+            margin-bottom: 50px;
+        }
+        .box3:nth-child(1){
+            animation: fill 2s ease 2s 1 normal none;
+        }
+        .box3:nth-child(2){
+            animation: fill 2s ease 2s 1 normal none;
+            animation-fill-mode: forwards;
+        }
+        .box3:nth-child(3){
+            animation: fill 2s ease 2s 1 normal none;
+            animation-fill-mode: backwards;
+        }
+        .box3:nth-child(4){
+            animation: fill 2s ease 2s 1 normal none;
+            animation-fill-mode: both;
+        }
+
+        @keyframes animate{
+            from{
+                margin-left: 10%;
+                width: 30%;
+            }
+            to{
+                margin: 0;
+                width: 60%;
+                font-size: 50px;
+            }
+        }
+        @keyframes animate2{
+            0%{
+                margin-left: 10%;
+                font-size: 50px;
+                width: 30%;
+            }
+            30%{
+                font-size: 30px;
+                width: 60%;
+            }
+            60%, 72%{
+                font-size: 80px;
+                width: 100%;
+            }
+            100%{
+                font-size: 30px;
+                width:30%;
+            }
+        }
+
+        @keyframes smileRun{
+            0%{
+
+            }
+            100%{
+                transform: translateX(400px);
+            }
+        }
+        @keyframes fill{
+            0%{
+                transform: translate(100px, 50px);
+                background-color: yellowgreen;
+            }
+            50%{
+                color: blue;
+            }   
+            100%{
+                transform: translate(400px, 50px);
+                background-color: tomato;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Animation</h1>
+    <section>
+        <div class="box">
+            HELLO!
+        </div>
+        <div class="box">
+            HELLO!
+        </div>
+        <div class="box">
+            HELLO!
+        </div>
+    </section>
+    <hr/>
+    <h2>animation-direction</h2>
+    1) nomal / 2) reverse / 3) alternate / 4) alternate-reverse
+    <section>
+        <div class="box2">
+            :-)
+        </div>
+        <div class="box2">
+            :-)
+        </div>
+        <div class="box2">
+            :-)
+        </div>
+        <div class="box2">
+            :-)
+        </div>
+    </section>
+    <hr/>
+    <h2>animation-fill-mode</h2>
+    1) none / 2) forwards / 3) backwards / 4) both
+    <section>
+        <div class="box3">
+            :-)
+        </div>
+        <div class="box3">
+            :-)
+        </div>
+        <div class="box3">
+            :-)
+        </div>
+        <div class="box3">
+            :-)
+        </div>
+    </section>
+</body>
+</html>
