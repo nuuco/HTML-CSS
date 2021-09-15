@@ -81,7 +81,7 @@
             height: 300px;
         }
         .c8 .box:first-child{
-            /*flex-grow: 0;(기본값)*/
+            flex-grow: 0; /*(기본값)*/
         }
         .c8 .box:nth-child(2){
             flex-grow: 2;
@@ -123,6 +123,63 @@
             flex: 1;
             /*1개 또는 2개의 단위 없는 숫자를 작성하면 
             생략한 flex-basis의 값은 auto가 아니라 0이 된다!*/
+        }
+
+        .c13{
+            justify-content: space-between;
+        }
+        .c14{
+            justify-content: space-around;
+        }
+        .c15,
+        .c16,
+        .c17,
+        .c18{
+            height: 300px;
+        }
+        .c15 .box{
+            height: auto;
+        }
+
+        .c16{
+            align-items: flex-start;
+        }
+        .c17{
+            align-items: flex-end;
+        }
+        .c18{
+            align-items: center;
+        }
+        .c19,
+        .c20,
+        .c21,
+        .c22{
+            height: 500px;
+            flex-wrap: wrap;
+        }
+        .c19{
+            align-content: space-between;
+        }
+        .c20{
+            align-content: space-around;
+        }
+        .c21{
+            align-content: center;
+        }
+        .c19 .box,
+        .c20 .box,
+        .c21 .box,
+        .c22 .box{
+            width: 300px;
+            height: 60px;
+        }
+
+        .c22{
+            align-items: flex-start;
+        }
+        .c22 .box:nth-child(4){
+            height: auto;
+            align-self: stretch;
         }
 
     </style>
@@ -238,6 +295,102 @@
             <div class="box">조금 길게 1</div>
             <div class="box">2</div>
             <div class="box">3</div>
+        </div>
+    </section>
+    <hr/>
+    <section>
+        <h2>Container <- justify-content: space-between;</h2>
+        <div class="container c13">
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
+            <div class="box">4</div>
+            <div class="box">5</div>
+        </div>
+        <h2>Container <- justify-content: space-around;</h2>
+        <div class="container c14">
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
+            <div class="box">4</div>
+            <div class="box">5</div>
+        </div>
+    </section>
+    <hr/>
+    <section>
+        <h2>Container <- align-items: stretch; (기본값)</h2>
+        <div class="container c15">
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
+            <div class="box">4</div>
+            <div class="box">5</div>
+        </div>
+        <h2>Container <- align-items: flex-start;</h2>
+        <div class="container c16">
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
+            <div class="box">4</div>
+            <div class="box">5</div>
+        </div>
+        <h2>Container <- align-items: flex-end;</h2>
+        <div class="container c17">
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
+            <div class="box">4</div>
+            <div class="box">5</div>
+        </div>
+        <h2>Container <- align-items: center;</h2>
+        <div class="container c18">
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
+            <div class="box">4</div>
+            <div class="box">5</div>
+        </div>
+    </section>
+    <hr/>
+    <section>
+        <h2>Container <- align-content: space-between;</h2>
+        <div class="container c19">
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
+            <div class="box">4</div>
+            <div class="box">5</div>
+            <div class="box">6</div>
+        </div>
+        <h2>Container <- align-content: space-around;</h2>
+        <div class="container c20">
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
+            <div class="box">4</div>
+            <div class="box">5</div>
+            <div class="box">6</div>
+        </div>
+        <h2>Container <- align-content: center;</h2>
+        <div class="container c21">
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
+            <div class="box">4</div>
+            <div class="box">5</div>
+            <div class="box">6</div>
+        </div>
+    </section>
+    <hr/>
+    <section>
+        <h2>Item <- align-self: stretch;</h2>
+        <div class="container c22">
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
+            <div class="box">4</div>
+            <div class="box">5</div>
+            <div class="box">6</div>
         </div>
     </section>
 </body>
