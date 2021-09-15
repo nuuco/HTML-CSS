@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+    <style>
+        .container{
+            border: 5px dashed salmon;
+            display: flex;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            margin: 5px;
+            background-color: aliceblue;
+            border: 5px solid skyblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            color: blue
+        }
+        .c1 .box{
+            width: 200px;
+            height: 200px;
+        }
+
+        .c2{
+            height: 500px;
+            border: 5px dashed salmon;
+            flex-direction: column-reverse;
+        }
+        .c2 .box{
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+        }
+        .c3{
+            width: 50%;
+            height: 400px;
+            flex-wrap: wrap;
+        }
+        .c3 .box{
+            width: 100px;
+            height: 100px;
+        }
+        .c4{
+            width: 50%;
+            height: 400px;
+            flex-wrap: wrap-reverse;
+        }
+        .c4 .box{
+            width: 100px;
+            height: 100px;
+        }
+        .c5{
+            height: 300px;
+            flex-flow: column-reverse wrap;
+        }
+
+        #b1{
+            order: 1;
+        }
+        #b2{
+            order: 2;
+        }
+        #b3{
+            order: -1;
+        }
+
+        .c7{
+            height: 300px;
+            flex-wrap: wrap;
+        }
+        .c7 .box{
+            flex-grow: 1;
+        }
+        .c8{
+            height: 300px;
+        }
+        .c8 .box:first-child{
+            /*flex-grow: 0;(기본값)*/
+        }
+        .c8 .box:nth-child(2){
+            flex-grow: 2;
+        }
+        .c8 .box:last-child{
+            flex-grow: 1;
+        }
+
+        .c9 .box{
+            width: 200px;
+        }
+        .c10 .box{
+            width: 200px;
+        }
+        .c10 .box:first-child{
+            flex-shrink: 0;
+        }
+        .c10 .box:nth-child(2){
+            flex-shrink: 2;
+        }
+        .c10 .box:last-child{
+            flex-shrink: 1;
+        }
+
+        .c11 .box:first-child{
+            flex-basis: 0;
+            flex-grow: 2;
+        }
+        .c11 .box:nth-child(2){
+            flex-basis: 0;
+            flex-grow: 1;
+        }
+        .c11 .box:last-child{
+            flex-basis: 0;
+            flex-grow: 1;
+        }
+
+        .c12 .box{
+            flex: 1;
+            /*1개 또는 2개의 단위 없는 숫자를 작성하면 
+            생략한 flex-basis의 값은 auto가 아니라 0이 된다!*/
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Flexbox</h1>
+    <section>
+        <h2>Container <- display: flex;</h2>
+        <div class="container c1">
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
+            <div class="box">4</div>
+            <div class="box">5</div>
+        </div>
+    </section>
+    <hr/>
+    <section>
+        <h2>Container <- flex-direction: column-reverse;</h2>
+        <div class="container c2">
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
+            <div class="box">4</div>
+            <div class="box">5</div>
+        </div>
+    </section>
+    <hr/>
+    <section>
+        <h2>Container <- flex-wrap: wrap;</h2>
+        <div class="container c3">
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
+            <div class="box">4</div>
+            <div class="box">5</div>
+        </div>
+        <h2>Container <- flex-wrap: wrap-reverse;</h2>
+        <div class="container c4">
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
+            <div class="box">4</div>
+            <div class="box">5</div>
+        </div>
+        <h2>Container <- flex-flow: column-reverse wrap;</h2>
+        <div class="container c5">
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
+            <div class="box">4</div>
+            <div class="box">5</div>
+        </div>
+    </section>
+    <hr/>
+    <section>
+        <h2>Item <- order</h2>
+        <div class="container c6">
+            <div class="box" id="b1">1</div>
+            <div class="box" id="b2">2</div>
+            <div class="box" id="b3">3</div>
+            <div class="box">4</div>
+            <div class="box">5</div>
+        </div>
+    </section>
+    <hr/>
+    <section>
+        <h2>Item <- flex-grow: 1;</h2>
+        <div class="container c7">
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
+            <div class="box">4</div>
+            <div class="box">5</div>
+        </div>
+        <h2>Item <- flex-grow 다 다르게</h2>
+        <div class="container c8">
+            <div class="box">grow 0</div>
+            <div class="box">grow 2</div>
+            <div class="box">grow 1</div>
+        </div>
+    </section>
+    <hr/>
+    <section>
+        <h2>Item <- flex-shrink: 1;(기본값)</h2>
+        <div class="container c9">
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
+            <div class="box">4</div>
+            <div class="box">5</div>
+        </div>
+        <h2>Item <- flex-shrink 다 다르게</h2>
+        <div class="container c10">
+            <div class="box">shrink 0</div>
+            <div class="box">shrink 2</div>
+            <div class="box">shrink 1</div>
+        </div>
+    </section>
+    <hr/>
+    <section>
+        <h2>Item <- flex-basis</h2>
+        <div class="container c11">
+            <div class="box">basis 0<br/>grow 2</div>
+            <div class="box">basis 0<br/>grow 1</div>
+            <div class="box">basis 0<br/>grow 1</div>
+        </div>
+    </section>
+    <hr/>
+    <section>
+        <h2>Item <- flex(shorthand)</h2>
+        <div class="container c12">
+            <div class="box">조금 길게 1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
+        </div>
+    </section>
+</body>
+</html>
