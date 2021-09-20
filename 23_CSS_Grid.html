@@ -119,6 +119,74 @@
             justify-content: space-between;
             align-content: space-between;
         }
+        .c14, .c15{
+            width: 300px;
+            height: 300px;
+            grid-template-rows: repeat(3,100px);
+            grid-template-columns: repeat(3, 100px);
+            justify-items: stretch;
+            align-items: stretch;
+            /* stretch 는 자기 자신의 크기 값이 있으면 적용 안 된다.*/
+        }
+        .c15{
+            justify-items: center;
+            align-items: center;
+        }
+        .c16, .c17, .c18, .c19, .c20{
+            width: 300px;
+            height: 300px;
+            grid-template-rows: repeat(3,100px);
+            grid-template-columns: repeat(3, 100px);
+        }
+        .c17{
+            grid-auto-flow: row dense;
+        }
+        .c16 .item:first-child{
+            background-color: coral;
+            grid-row-start: 1;
+            grid-row-end: 3; /*span 2*/
+        }.c16 .item:nth-child(2){
+            background-color: pink;
+            grid-row: 1 / -1;
+        }
+        .c16 .item:nth-child(4){
+            background-color: bisque;
+            grid-row: span 2;
+        }
+        .c17 .item:first-child{
+            background-color: coral;
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }.c17 .item:nth-child(2){
+            background-color: pink;
+            grid-column: 1 / -1;
+        }
+        .c17 .item:last-child{
+            background-color: bisque;
+            grid-column: span 2;
+        }
+        .c18 .item:first-child{
+            grid-area: 2 / 2 / span 2 / -1;
+        }
+        .c19 .item:first-child{
+            order: 1;
+        }
+        .c19 .item:last-child{
+            order: -1;
+        }
+        .c20 .item{
+            opacity: 0.7;
+        }
+        .c20 .item:first-child{
+            grid-row: 1 / span 2;
+            grid-column: 1 / span 2;
+            z-index: 1;
+        }
+        .c20 .item:nth-child(2){
+            grid-row: 1 / 2;
+            grid-column: 2 / 4;
+        }
+
 
     </style>
 </head>
@@ -300,5 +368,83 @@
         </div>
     </section>
     <hr/>
+    <section>
+        <h2>justify-items: stretch; align-items: stretch;</h2>
+        <div class="con c14">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
+            <div class="item">7</div>
+            <div class="item">8</div>
+            <div class="item">9</div>
+        </div>
+        <h2>justify-items: center; align-items: center;</h2>
+        <div class="con c15">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
+            <div class="item">7</div>
+            <div class="item">8</div>
+            <div class="item">9</div>
+        </div>
+    </section>
+    <hr/>
+    <section>
+        <h2>grid-row</h2>
+        <div class="con c16">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+        </div>
+    </section>
+    <hr/>
+    <section>
+        <h2>grid-column</h2>
+        <div class="con c17">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+        </div>
+    </section>
+    <hr/>
+    <section>
+        <h2>grid-area (shorthand)</h2>
+        <div class="con c18">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+        </div>
+    </section>
+    <hr/>
+    <section>
+        <h2>order</h2>
+        <div class="con c19">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+        </div>
+    </section>
+    <hr/>
+    <section>
+        <h2>z-index</h2>
+        <div class="con c20">
+            <div class="item">1</div>
+            <div class="item">2</div>
+        </div>
+    </section>
 </body>
 </html>
