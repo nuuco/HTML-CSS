@@ -187,6 +187,39 @@
             grid-column: 2 / 4;
         }
 
+        .c21{
+            width: 300px;
+            height: 300px;
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-template-columns: min-content 1fr 1fr;
+        }
+        .c22{
+            width: 300px;
+            height: 300px;
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-template-columns: max-content 1fr 1fr;
+        }
+        .c21 .item, .c22 .item{
+            font-size: 20px;
+        }
+
+        .c23{
+            height: auto;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            /*열을 자동으로 채우겠다. 열의 크기(너비)는 200px*/
+            /*
+            1) 열의 너비가 200px 보다 작으면 → 1fr 씩 나눠 가진다.
+            2) 200px 보다 커지지만 200px 열이 추가로 들어갈 정도는 아니면 → 여전히 1fr씩
+            3) 200px 열이 추가로 들어갈 공간이 생기면 → 열이 추가된다.
+            */
+            grid-auto-rows: 150px;
+        }
+        .c24{
+            height: auto;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            /*남는 여백 없이 가득 채워진다.*/
+            grid-auto-rows: 150px;
+        }
 
     </style>
 </head>
@@ -444,6 +477,51 @@
         <div class="con c20">
             <div class="item">1</div>
             <div class="item">2</div>
+        </div>
+    </section>
+    <hr/>
+    <section>
+        <h2>min-content</h2>
+        <div class="con c21">
+            <div class="item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, tenetur!</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
+            <div class="item">7</div>
+            <div class="item">8</div>
+            <div class="item">9</div>
+        </div>
+        <h2>max-content</h2>
+        <div class="con c22">
+            <div class="item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, tenetur!</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
+            <div class="item">7</div>
+            <div class="item">8</div>
+            <div class="item">9</div>
+        </div>
+    </section>
+    <hr/>
+    <section>
+        <h2>auto-fill</h2>
+        <div class="con c23">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
+        </div>
+        <h2>auto-fit</h2>
+        <div class="con c24">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
         </div>
     </section>
 </body>
