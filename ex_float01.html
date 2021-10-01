@@ -1,0 +1,49 @@
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>ex_float01</title>
+		
+		<style>
+			/*복수 대상 선택*/
+			#a, #b, #c{
+				width:100px; height:100px;
+				background:#ccc;
+				border:1px solid #000;
+				float:left;
+				margin-bottom:40px;
+			}
+			
+			.parent{
+				border:10px solid #f00;
+				background:#ffc;
+				/*parent요소는 float 영역(#a,#b,#c) 다음에 오는 요소*/
+				clear:both;
+				margin:140px 0 0 40px;
+				/*margin-top값은 적용되지 않는다. 위에 요소가 float니까*/
+				
+				height:80px;
+			}
+			
+			.parent div{
+				width:80px; height:80px;
+				border:1px solid #000;
+				float:left;
+			}
+			
+			#child1{background:#0f0;}
+			#child2{background:#f0f;}
+			#child3{background:#0ff;}
+			
+		</style>
+	</head>
+	<body>
+		<div id="a"></div>
+		<div id="b"></div>
+		<div id="c"></div>
+		<div class="parent">
+			<div id="child1"></div>
+			<div id="child2"></div>
+			<div id="child3"></div>
+		</div>
+	</body>
+</html>

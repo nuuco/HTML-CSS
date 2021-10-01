@@ -1,0 +1,100 @@
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>ex_float05</title>
+		<style>
+			/*테두리 설정*/
+			.wrap1, .wrap2, .wrap3{
+				border: 10px solid black;
+			}
+			
+			.wrap1{
+				width:600;
+				height:300;
+			}
+			
+			.wrap2{
+				width:600;
+				height:100;
+			}
+			
+			.wrap3{
+				width:600;
+				height:200;
+			}
+			
+			
+			/*1번째 박스*/
+			#a1{
+				float:left;
+				background: #ffc;
+				width:65%;
+				height:100%;
+			}
+			
+			#a2, #a3, #a4{
+				width:30%;
+				height:30%;
+				background: #fcc;
+				float:right;
+			}
+			
+			#a3{
+				margin: 2.5% 0;
+			}
+			
+			
+			/*2번째 박스*/
+			.wrap2 div{
+				background:#ccf;
+				width:30%;
+				height:100%;
+				float:left;
+			}
+			
+			#b2{
+				margin: 0 5%;
+			}
+			
+			/*3번째 박스*/
+			
+			.wrap3 div{
+				background:#9f9;
+				width:48%;
+				height:100%;
+			}
+			
+			#c1{
+				float:left;
+			}
+			
+			#c2{
+				float:right;
+			}
+			
+			
+			
+		</style>
+	</head>
+	<body>
+		<div class="wrap1">
+			<div id="a1">a-1</div>
+			<div id="a2">a-2</div>
+			<div id="a3">a-3</div>
+			<div id="a4">a-4</div>
+		</div>
+		<br/>
+		
+		<div class="wrap2">
+			<div id="b1">b-1</div>
+			<div id="b2">b-2</div>
+			<div id="b3">b-3</div>
+		</div>
+		<br/>
+		
+		<div class="wrap3">
+			<div id="c1">c-1</div>
+			<div id="c2">c-2</div>
+		</div>
+	</body>
+</html>

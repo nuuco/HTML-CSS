@@ -1,0 +1,86 @@
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>ex_float04</title>
+		<style>
+			#parent{
+				width:700px;
+				height:330px;
+				border:5px solid black;
+				background:#dd9;
+			}
+			
+			
+			/*두 스타일 동시에 주기*/
+			.red, .green{
+				width:240px;
+				height:240px;
+				border-width:5px;
+				border-style:solid;
+			}
+			
+			
+			
+			.red{
+				border-color:red;
+				background:#fcc;
+				margin:40px;
+				float:left;
+			}
+			
+			.green{
+				border-color:green;
+				background:#cfc;
+				margin:40px;
+				float:right;
+			}
+			
+			/*parent의 div의 div에 속석 줄 때 (red와 green안의 div에 속성이 적용된다.*/
+			#parent div div{
+				width:80px;
+				height:80px;	
+			}
+			
+			.red div{
+				float:left;
+			}
+			
+			.green div{
+				float:right;
+			}
+			
+			#r1{background:#00f;}
+			#r2{background:#33f;}
+			#r3{background:#66f;}
+			#r4{background:#99f;}
+			#r5{background:#ccf;}
+			
+			#g1{background:#00f;}
+			#g2{background:#33f;}
+			#g3{background:#66f;}
+			#g4{background:#99f;}
+			#g5{background:#ccf;}
+			
+			#r5, #g2, #g3{clear:both;}
+			
+		</style>
+	</head>
+	<body>
+		<div id="parent">
+			<div class="red">
+				<div id="r1">1</div>
+				<div id="r2">2</div>
+				<div id="r3">3</div>
+				<div id="r4">4</div>
+				<div id="r5">5</div>
+			</div>
+			<div class="green">
+				<div id="g1">1</div>
+				<div id="g2">2</div>
+				<div id="g3">3</div>
+				<div id="g4">4</div>
+				<div id="g5">5</div>
+			</div>
+		</div>
+	</body>
+</html>
