@@ -1,0 +1,126 @@
+@charset "UTF-8";
+
+*{margin: 0; padding: 0;}
+li{list-style:none;}
+
+body{
+	font-family: 'Noto Sans KR', 'Malgun Gothic', 'AppleGothicNeoSD', 'Apple SD 산돌고딕 Neo', 'Microsoft NeoGothic', 'Droid sans', 'arial', 'sans-serif';
+}
+
+
+#header .wrap{
+	width: 1200px;
+	height: 150px;
+	margin: 0 auto;
+}
+#header #seoul_menu{
+	height: 48px;
+	border-bottom: 1px solid #e4e9f0;
+}
+#header #seoul_logo{float:left; margin-right:75px;}
+#header #seoul_notice{float:left;}
+#header #seoul_top{float:right; font-size:0;}
+#header #seoul_top li{display:inline;}
+
+#header #header_main{
+	height:70px;
+	border-bottom:1px solid #e4e9f0;
+	padding-top: 30px;
+}
+
+#header #logo{clear:both; float:left; margin-right:178px;}
+#header #main_menu{float:left; font-size:0;}
+#header #login_menu{float:right; font-size:0;}
+#header #main_menu li,
+#header #login_menu li{display:inline;}
+
+
+
+#main{
+	width: 1200px;
+	height: 1861px;
+	margin: 0 auto;
+}
+#main #main_view{
+	height:562px;
+	padding-top:50px;
+	background: url("images/bg.png") no-repeat center 0;/*배경이미지 중앙 맞춤*/
+	background-size:cover;
+}
+#main #main_view #text{float:left;}
+#main #main_view #text h2{
+	color: #fff;
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+#main #main_view #text p{
+	font-size: 16px;
+    color: #c5dbff;
+}
+#main #main_view #search,
+#main #main_view #count{float:right;}
+#main #main_view #count dl{
+	float:left;
+	text-align:center;
+	margin-top:30px;
+	margin-bottom:45px;
+	padding: 0 40px;
+}
+#main #main_view #count dt{
+	font-size: 16px;
+    color: #c5dbff;	
+}
+#main #main_view #count dd{
+	font-family: 'Roboto';
+    font-size: 34px;
+    font-weight: 600;
+    color: #fff;
+}
+#main #main_view #icon{float:left;}
+#main #main_view #main_banner{float:right;}
+
+#main #board{
+	height: 300px;
+	padding-top:40px;
+}
+#main #board #board1{float:left;}
+#main #board #board2{float:right;}
+
+#main #data_banner{
+	background: #e3eaf4;
+	height: 364px;
+	padding: 80px 0;
+}
+#main #data_banner li{
+	float:left;
+}
+
+#main #etc{
+	height:245px;
+	padding: 70px 0;
+}
+#main #etc #notice{float:left;}
+#main #etc #etc_banner{float:right;}
+#main #etc #etc_banner #eb1{float:left; margin-right:10px;}
+#main #etc #etc_banner #eb2{float:right;margin-bottom:10px;}
+
+
+#footer{
+	width: 1200px;
+	margin: 0 auto;
+}
+#footer #btm_menu{
+	height:33px;
+	padding: 12px 0;
+	background: #434547;
+}
+#footer #btm_menu ul{float:left; margin-left:190px;}
+#footer #btm_menu li{display:inline;}
+#footer #btm_menu p{float:right;}
+#footer #btm_info{
+	height: 86px;
+	background: #505256;
+	padding-top: 30px;
+}
+#footer #btm_info p{float:left;margin-right:35px;}
