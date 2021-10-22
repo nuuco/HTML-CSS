@@ -17,3 +17,4 @@
 14. 9.14 - animation
 15. 9.15 - flexbox
 16. 9.16 - Grid
+17. 10.22 - CSS_counter
