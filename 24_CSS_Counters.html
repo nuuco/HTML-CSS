@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counters - Automatic Numbering With Counters</title>
+<style>
+*{list-style: none; padding: 0; margin: 0;}
+
+.container{
+    width: 60vw;
+    height: 90vh;
+    margin: 0 auto;
+    background: aliceblue;
+    padding: 3vw;
+    text-align: center;
+
+    /*counter-reset: 카운터이름 시작숫자(없으면 0)*/
+    counter-reset: num 2;
+}
+
+li{
+    width: 10vw;
+    height: 10vw;
+    margin: 2vw;
+    float: left;
+    background: pink;
+    position: relative;
+
+    /*counter-increment: 카운터이름 증가숫자(없으면 1)*/
+    counter-increment: num 2;
+    /*초기값이 2, 첫 번째 요소에서 +2 가 되니까 4번부터 시작*/
+}
+
+li::before{
+    width: 5vw;
+    height: 5vw;
+    background: salmon;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: white;
+    font-size: 3vw;
+    line-height: 5vw;
+
+    /*실제 카운터가 써지는 부분*/
+    /*content: counter(카운터 이름, 스타일-옵션)*/
+    content: counter(num) ".";
+}
+
+
+</style>
+</head>
+<body>
+
+<ul class="container">
+    <h1>CSS counter</h1>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+
+</body>
+</html>
+
