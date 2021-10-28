@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>그리드 적용예시 1번</title>
+	<link href="grid.css" rel="stylesheet"/>
+	<style>
+		h1{text-align: center;}
+		section{width: 100%; max-width: 1400px; margin: 0 auto;
+			border-bottom: 1px solid #000; padding: 20px 0;}
+		section > div{height: 100px; outline: 1px solid #f00;
+			background: #cff;}
+			
+	</style>
+</head>
+<body>
+	<h1>그리드시스템(12열)</h1>
+	<section class="grid">
+		<h3>12개의 열</h3>
+		<div class="col-1">열1개의 크기</div>
+		<div class="col-1">열1개의 크기</div>
+		<div class="col-1">열1개의 크기</div>
+		<div class="col-1">열1개의 크기</div>
+		<div class="col-1">열1개의 크기</div>
+		<div class="col-1">열1개의 크기</div>
+		<div class="col-1">열1개의 크기</div>
+		<div class="col-1">열1개의 크기</div>
+		<div class="col-1">열1개의 크기</div>
+		<div class="col-1">열1개의 크기</div>
+		<div class="col-1">열1개의 크기</div>
+		<div class="col-1 right">열1개의 크기</div>
+	</section>
+
+	<section class="grid">
+		<h3>6개의 열</h3>
+		<div class="col-2">열2개의 크기</div>
+		<div class="col-2">열2개의 크기</div>
+		<div class="col-2">열2개의 크기</div>
+		<div class="col-2">열2개의 크기</div>
+		<div class="col-2">열2개의 크기</div>
+		<div class="col-2 right">열2개의 크기</div>
+	</section>
+
+	<section class="grid">
+		<h3>4개의 열</h3>
+		<div class="col-3">열 3개의 크기</div>
+		<div class="col-3">열 3개의 크기</div>
+		<div class="col-3">열 3개의 크기</div>
+		<div class="col-3 right">열 3개의 크기</div>
+	</section>
+
+	<section class="grid">
+		<h3>3개의 열</h3>
+		<div class="col-4">열 4개의 크기</div>
+		<div class="col-4">열 4개의 크기</div>
+		<div class="col-4 right">열 4개의 크기</div>
+	</section>
+
+	<section class="grid">
+		<h3>2개의 열(5:7)</h3>
+		<div class="col-5">열5개의 크기</div>
+		<div class="col-7 right">열7개의 크기</div>
+	</section>
+
+	<section class="grid">
+		<h3>2개의 열(6:6)</h3>
+		<div class="col-6">열6개의 크기</div>
+		<div class="col-6 right">열6개의 크기</div>
+	</section>
+
+	<section class="grid">
+		<h3>2개의 열(8:4)</h3>
+		<div class="col-8">열8개의 크기</div>
+		<div class="col-4 right">열4개의 크기</div>
+	</section>
+</body>
+</html>
