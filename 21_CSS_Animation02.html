@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>애니메이션(p233)</title>
+	<style>
+		@keyframes play{
+			from{background: red;}
+			to{background: yellow;}
+
+		}
+
+		@keyframes ani {
+			0%{transform: translate(100px, 100px); background: green;}
+			20%{transform: translate(200px, 100px);}
+			40%{transform: translate(200px, 0px);}
+			60%{transform: translate(300px, 0px);}
+			80%{transform: translate(300px, 100px);}
+			100%{transform: translate(400px, 100px); background: pink;}
+		}
+
+		h2{font-size: 30px; color: #fff; background: blue;
+			padding: 10px; 
+			animation-name: play; /* 진행할 애니메이션(키프레임)의 이름 */
+			animation-duration: 2s; /* 재생시간 */
+			animation-iteration-count: infinite; /* 반복횟수 */
+			/* infinite : 무한반복 */
+		}
+		#this{width: 50px; height: 50px; background: blue;
+			animation-name: ani;
+			animation-duration: 5s;
+			animation-timing-function: ease; /* 각 구간별 속도 */
+			/* arof03.cafe24.com/속도비교.html
+				키워드값 : ease, linear, ease-in, ease-out, ease-in-out
+			*/
+			animation-delay: 3s; /* 대기시간 */
+			animation-iteration-count: 5;
+			animation-direction: alternate; /* 재생방향 */
+			/* reverse(역방향), alternate(정-역), alternate-reverse(역-정) */
+			animation-fill-mode: both; /* 대기중, 완료후 스타일 적용 */
+			/* forwards(완료후), backwards(대기중), both(둘다)*/	
+		}
+		#this:hover{animation-play-state: paused;}
+
+	</style>
+</head>
+<body>
+	<h2>CSS - animation</h2>
+	<p>시간의 흐름에 따라 여러 스타일로 점진적으로 변화하는 애니메이션 효과를 생성한다.</p>
+
+	<div id="this"></div>
+
+	
+</body>
+</html>
