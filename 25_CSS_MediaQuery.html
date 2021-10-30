@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>미디어쿼리</title>
+	<link href="style1.css" rel="stylesheet" media="tv"/> 
+	<!--tv를 통해 웹 브라우저를 연결할 때만, 이 스타일이 적용된다.-->
+
+	<style>
+		@import "reset.css";
+		/* CSS 코드 안에서 외부 CSS문서 연결하기*/
+		@import "style2.css" speech; /* 음성출력장치가 적용받는 스타일 */
+
+		body{background: #ffc;}
+		h1{color: #00f;}
+
+		/* 프린트 할 때는 스타일(인쇄 미리보기 시 적용) */
+		@media print{
+			body{background: pink;}
+			h1{color: red;}
+		}
+	</style>
+</head>
+<body>
+	<h1>미디어쿼리(p269)</h1>
+	<p>출력되는 미디어(디바이스)의 타입에 따라 적용되는 스타일을 다르게 함.</p>
+	<!--
+		all - 모든 디바이스
+		brille - 점자 디스플레이
+		embossed - 점자 프린터
+		handheld - 휴대용단말기
+		print - 프린터(인쇄미리보기)
+		speech - 음성합성장치
+		screen - 컴퓨터 디스플레이
+		tty - 문자폭이 고정된 미디어
+		tv - TV
+	-->
+
+</body>
+</html>
