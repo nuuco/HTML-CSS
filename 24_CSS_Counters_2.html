@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>counters()</title>
+    <style>
+        body{text-align: center; padding: 0; margin: 0;}
+        div{display: inline-block; margin: 20px; text-align: left;}
+        h2{font-size: 20px;}
+        li{list-style: none; font-size: 18px; line-height: 30px;}
+
+        /* counter() */
+        .counter{counter-reset: main; padding: 0;}
+        .counter li{counter-increment: main;}
+        .counter ul{counter-reset: sub;}
+        .counter li li{counter-increment: sub;}
+
+        .counter > li::before{content: counter(main)". ";}
+        .counter li li::before{content: counter(main)"."counter(sub)" ";}
+        
+
+        /* counters() */
+        .counter_2{counter-reset: menu;}
+        .counter_2 li{counter-increment: menu;}
+
+        .counter_2 li::before{content: counter(menu)". ";}
+        .counter_2 li li::before{content: counters(menu, '.')" ";}
+
+
+    </style>
+
+</head>
+<body>
+    <h1>CSS Counter</h1>
+    <div>
+        <h2>counter() 만 써서 카운터 중첩</h2>
+
+        <ul class="counter">
+            <li>국어
+                <ul>
+                    <li>듣기</li>
+                    <li>읽기</li>
+                    <li>말하기</li>
+                </ul>
+            </li>
+            <li>수학
+                <ul>
+                    <li>확률과 통계</li>
+                    <li>미적분</li>
+                </ul>
+            </li>
+            <li>사회
+                <ul>
+                    <li>한국사</li>
+                    <li>지리</li>
+                    <li>윤리</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div>
+        <h2>counters() 로 카운터 중첩 (class 부여 주의) </h2>
+
+        <ul class="counter_2">
+            <li>국어
+                <ul class="counter_2">
+                    <li>듣기</li>
+                    <li>읽기</li>
+                    <li>말하기</li>
+                </ul>
+            </li>
+            <li>수학
+                <ul class="counter_2">
+                    <li>확률과 통계</li>
+                    <li>미적분</li>
+                </ul>
+            </li>
+            <li>사회
+                <ul class="counter_2">
+                    <li>한국사</li>
+                    <li>지리</li>
+                    <li>윤리</li>
+                </ul>
+            </li>
+        </ul>
+    </div>  
+</body>
+</html>
