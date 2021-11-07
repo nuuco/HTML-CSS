@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>em</title>
+    <style>
+        .parent1{font-size: 30px;}
+        .child1{font-size: 1em;}
+        .child2{font-size: 2em;}
+        .child3{font-size: 0.5em;}
+        .child3_2{font-size: 50%;}
+        .child4{font-size: 15px;}
+        .child5{display: inline-block; font-size: 10px; padding: 1em; background-color: pink;}
+    </style>
+</head>
+<body>
+    <h1>em</h1>
+    <ul>
+        <li>1em = 해당 요소의 지정된 font-size 가 있는 경우 그 값이 1em</li>
+        <li>지정된 값이 없는 경우 상속받은 부모의 font-size 가 1em</li>
+        <li>설정된 글자의 비율을 기준으로 한다.<br/>
+            ex) 대상{font-size: 12px; width: 10em; height: 2em; } → 너비 120px; 높이 24px;
+        </li>
+        <li>%로 대신 써도 똑같다. (%도 부모 크기에 대응하기 때문)<br/>
+            font-size: 0.5em;   =  font-size: 50%; <br>
+            0.5em = 50%의 글자 크기<br/>
+            1em = 100%<br/>
+        </li>
+        <li>부모도 상속 받는 경우, 실제 폰트 사이즈를 알기가 어렵다.<br/>
+            → 이런 경우 rem 이 효율적!
+        </li>
+    </ul>
+
+
+    <div class="parent1">부모 글자 크기 - 30px
+        <div class="child1">자식 글자 크기 - 1em (30px)</div>
+        <div class="child2">자식 글자 크기 - 2em (60px)</div>
+        <div class="child3">자식 글자 크기 - 0.5em (15px)</div>
+        <div class="child3_2">자식 글자 크기 - 50% (15px)</div>
+        <div class="child4">자식 글자 크기 - 15px</div>
+        <div class="child5">자식 글자 크기 - 10px 설정후, 패딩값을 1em 으로</div>
+    </div>
+
+</body>
+</html>
