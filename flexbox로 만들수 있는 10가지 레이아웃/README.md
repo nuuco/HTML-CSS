@@ -1,6 +1,6 @@
 # flexbox로 만들 수 있는 10가지 레이아웃
 
-[Naver D2](https://d2.naver.com/home) 사이트의 [flexbox로 만들 수 있는 10가지 레이아웃](https://d2.naver.com/helloworld/8540176) 게시글을 보고 작성하였습니다.
+[Naver D2](https://d2.naver.com/home) 사이트의 [flexbox로 만들 수 있는 10가지 레이아웃](https://d2.naver.com/helloworld/8540176) 게시글을 베이스로 개인적인 공부내용을 추가해 작성하였습니다.
 
 <br/>
 
