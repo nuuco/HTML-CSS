@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내비게이션 영역</title>
+    <style>
+        /* 
+        내비게이션 영역 - 메뉴끼리 사이 여백 같게. 콘텐츠 크기는 auto로.
+        1. 오른 정렬 아이템(.gnb_menu)은 margin-left: auto 속성을 준다.
+            margin: auto; -> 가운데 배치
+            margin-left: auto; -> 오른쪽 배치
+            margin-right: auto; -> 왼쪽 배치
+        
+        2. 오른 정렬된 아이템의 자식들(.gnb_menu .menu) 정렬하기
+            -> 메뉴끼리 사이 여백 같게. 콘텐츠 크기는 auto로.
+
+            container의 크기를 정해주고(%로 주는 게 좋음)
+            item들은
+            flex-grow: 1; (= flex: 1 1 auto;) 로 준다.
+        */
+        *{margin: 0; padding: 0; list-style: none;line-height: 10vh;}
+        .gnb{background: lightgrey;
+            height: 10vh;
+            display: flex;
+            font-size: 2vw;
+            font-weight: 700;
+            text-align: center; 
+        }
+        #logo{background: blue;}
+        .search{background: skyblue; padding: 2vh 0; display: flex; width: 30%;}
+        .search_input{flex: 5 0 0; width: 0; box-sizing: border-box;}
+        .search_btn{box-sizing: border-box; font-size: 1.2vw;}
+        .gnb_menu{background: palevioletred; width: 60%;
+            display: flex; 
+            margin-left: auto;
+            /* margin-left: auto 속성으로 자식 요소를 오른쪽에 배치 */
+            /* 
+            margin: auto; -> 가운데 배치
+            margin-left: auto; -> 오른쪽 배치
+            margin-right: auto; -> 왼쪽 배치
+            */
+        }
+        .gnb_menu .menu{background: pink; border: 1px solid salmon; box-sizing: border-box;
+            flex-grow: 1;
+            cursor: pointer;
+        }
+        .gnb_menu .menu:hover{background: rgb(255, 165, 155);}
+    </style>
+</head>
+<body>
+    <nav class="gnb">
+        <div id="logo">로고</div>
+        <div class="search">
+            <input type="text" class="search_input"/>
+            <input type="button" value="검색" class="search_btn"/>
+        </div>
+        <ul class="gnb_menu">
+            <li class="menu">메뉴1</li>
+            <li class="menu">메뉴2</li>
+            <li class="menu">짧은메뉴</li>
+            <li class="menu">기이이이인메뉴</li>
+            <li class="menu">짧메</li>
+        </ul>
+    </nav>
+</body>
+</html>
