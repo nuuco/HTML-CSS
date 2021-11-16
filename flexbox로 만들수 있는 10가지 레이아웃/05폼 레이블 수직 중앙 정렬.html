@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼 레이블 수직 중앙 정렬</title>
+    <style>
+        *{padding: 0; margin: 0;}
+        h1{text-align: center; margin: 20px 0 30px;}
+        form{width: 50%; padding: 1%; background: aliceblue; margin: 0 auto;}
+        label{display: flex; align-items: center; margin-bottom: 10px; line-height: 1.8;}
+        span{font-size: 20px; font-weight: 700; flex-basis: 20%; text-align: center;} 
+        input{padding-left: 10px;}
+        textarea{padding: 10px;}
+        .input{flex: 1; min-height: 20px; font-size: 18px;}
+    </style>
+</head>
+<body>
+    <h1>폼 레이블 수직 중앙 정렬</h1>
+    <form>
+        <label><span>아이디</span>
+            <input class="input" type="text" />
+        </label>
+        <label><span>채널 키워드</span>
+            <textarea class="input" rows="10"></textarea>
+        </label>
+        <label><span>하고싶은 말을 써보세요.</span>
+            <textarea class="input" rows="10"></textarea>
+        </label>
+
+
+    </form>
+</body>
+</html>
