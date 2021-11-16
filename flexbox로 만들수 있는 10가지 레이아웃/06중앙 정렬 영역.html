@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중앙 정렬 아이콘</title>
+    <style>
+        *{padding: 0; margin: 0;}
+        .fixed{
+            position: fixed;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: #000;
+        
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #search{width: 50%; height: 5rem; font-size: 3rem;
+            background: none; border: 0; border-bottom: 3px solid powderblue;
+            outline: none; color: #fff;}
+        #search::placeholder{color: powderblue; opacity: .4;}
+        #search:focus{box-shadow: 0 5px 3px rgba(255, 255, 255, .3);}
+    </style>
+</head>
+<body>
+    <div class="fixed">
+        <input id="search" type="text" placeholder="Search..">
+    </div>
+</body>
+</html>
