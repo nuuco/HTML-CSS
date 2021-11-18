@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>말줄임과 아이콘</title>
+    <style>
+        *{padding: 0; margin: 0;}
+        li{list-style: none;}
+
+        .container{
+            display: flex;
+            background: aliceblue;
+            font-size: 20px; font-weight: 700;
+            line-height: 30px;
+            padding: 10px 5px;
+        }
+        .text{
+            margin-right: 10px;
+            background: pink;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        .icon{background: orange; flex-shrink: 0; margin: 0 5px;}
+        .icon:nth-child(2){margin-left: auto;}
+    </style>
+</head>
+<body>
+    <h1>말줄임과 아이콘</h1>
+    <ul class="container">
+        <li class="text">조건에 맞는 총 1215458786542145487871개의 매물이 있습니다</li>
+        <li class="icon">icon1</li>
+        <li class="icon">icon2</li>
+    </ul>
+    
+</body>
+</html>
