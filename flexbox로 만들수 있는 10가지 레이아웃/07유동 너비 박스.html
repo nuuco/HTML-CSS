@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>유동 너비 박스</title>
+    <style>
+        /*
+        유동 너비 박스
+        -> 아이템의 max-width 를 정해주면 된다.
+
+        */
+        *{padding: 0; margin: 0;}
+        li{list-style: none;}
+
+        .container{
+            background: aliceblue;
+            display: flex;
+        }
+        .item{
+            background: pink; padding: 10px; margin: 5px; font-size: 18px;
+            font-weight: 700; max-width: 400px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .right{margin-left: auto;}
+
+    </style>
+</head>
+<body>
+    <h1>유동 너비 박스</h1>
+    <ul class="container">
+        <li class="item">메뉴1</li>
+        <li class="item">메뉴2-가나다라마바사아자차카타파하</li>
+        <li class="item">메뉴3-가나다라마바</li>
+        <li class="item">메뉴4-가나다라</li>
+        <li class="item right">오른 메뉴</li>
+    </ul>
+</body>
+</html>
