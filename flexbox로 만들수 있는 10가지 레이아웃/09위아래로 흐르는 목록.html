@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>위아래로 흐르는 목록</title>
+    <style>
+        *{padding: 0; margin: 0;}
+        li{list-style: none;}
+
+        h1{text-align: center;}
+        
+        .container{
+            width: 40%; 
+            height: 70vh;
+            padding: 1%;
+            border: 3px solid orange; 
+            margin: 10px auto;
+
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-content: space-between;
+            justify-content: space-between;
+        }
+
+        .item{
+            background: salmon;
+            border: 2px solid purple;
+            font-size: 20px;
+            font-weight: 700;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 30%;
+            max-height: 30%;  /* 사이 여백이 생기게 하기 위해 높이값을 제한 함. */
+            flex: 1 1 30%;
+        }
+
+
+        
+    </style>
+</head>
+<body>
+    <h1>위아래로 흐르는 목록</h1>
+    <ul class="container">
+        <li class="item">Tile1</li>
+        <li class="item">Tile2</li>
+        <li class="item">Tile3</li>
+        <li class="item">Tile4</li>
+        <li class="item">Tile5</li>
+        <li class="item">Tile6</li>
+        <li class="item">Tile7</li>
+        <li class="item">Tile8</li>
+        <li class="item">Tile9</li>
+    </ul>
+</body>
+</html>
