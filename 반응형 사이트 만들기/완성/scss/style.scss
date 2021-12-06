@@ -1,0 +1,173 @@
+@charset "utf-8"; /*인코더 지정*/
+
+/* @import "reset.css"; 외부 css문서 연결*/
+
+/*공통*/
+body{font:14px/1.5 'Georgia';}
+.inner{width:100%; max-width:960px; margin:0 auto;
+	position:relative;}
+.stick::after{content:''; position:absolute; width:34px;
+	height:1px; background:#b2765b;}
+::selection{color:#542e1c; background-color:#eee7dd;}
+
+
+/*상단*/
+header{
+	background:url("../images/header-bg.jpg") no-repeat center center;
+	background-size:cover;
+	/*
+		배경이미지의 크기조절(p290)
+		background-size:너비 높이;
+			:cover; 이미지의 비율을 유지한 채, 
+							전체를 덮을 수 있는 최소한의 크기
+			:contain; 이미지의 비율을 유지한 채, 
+								이미지 전체가 표시될 수 있는 최대한의 크기
+	*/
+	.inner{height:500px;}
+	#logo{
+		a{display:block; width:194px; height:194px;
+			background:url("../images/header-brand-logo.png") no-repeat;
+			position:relative; top:94px; left:-22px; 
+			text-indent:-9999px; border-radius:50%;
+			transition:all .4s;}
+		a:hover{background-color:rgba(0,0,0,.1);}	
+		a::before{content:''; position:absolute;
+			width:17px; height:17px; top:50px; left:50%;
+			margin-left:-8.5px; transition:all .4s;
+			background:url("../images/header-brand-star.png") no-repeat;}	
+		a:hover::before{
+			top:35px; transform:rotate(360deg);}
+	}//end:#logo
+
+	#gnb{
+		position:absolute; top:35px; right:0;
+		li{float:left; margin-left:35px;}
+		a{font-size:16px; color:#282020; text-decoration:none;
+			text-shadow:0 1px #b3b3b3; transition:all .3s ease-in-out;}
+			/*글자에 그림자 효과
+				text-shadow:수평위치 수직위치 [블러] 색상;*/	
+		a:focus,	//탭키에 의해 대상이 선정된 경우	
+		a:hover{color:#fff; text-shadow:none;}		
+	}//end:#gnb
+}//end:header
+
+.menu_btn{display:none;
+	position:absolute; width:46px; height:46px;
+	right:10px; box-shadow:0 0 5px rgba(0,0,0,.2);
+	cursor:pointer; visibility:hidden; z-index:101;
+	&:hover{background:rgba(0,0,0,.2);}
+	&.scrolled{visibility:visible; position:fixed; top:10px;}
+	&.open{
+		box-shadow:0 0 5px rgba(255,255,255,.2);
+		i{background:#fff;}
+		i:nth-child(1){transform:translateY(0) rotate(45deg);}
+		i:nth-child(2){opacity:0;}
+		i:nth-child(3){transform:translateY(0) rotate(-45deg);}
+	}//&.open
+	i{position:absolute; top:50%; left:50%; 
+		width:30px; height:4px; margin:-2px 0 0 -15px;
+		border-radius:2px; background:#000; transition:all .4s;}
+	i:nth-child(1){transform:translateY(-8px);}	
+	i:nth-child(3){transform:translateY(8px);}	
+}//.menu_btn
+
+#fixed_area{
+	position:absolute; width:100%; height:45px; left:0;
+	line-height:45px; margin-top:-45px; z-index:100;
+	font-size:16px; color:#fff; transition:all .4s;
+	background:hsla(0,0%,15%,.4); 
+	h1{position:absolute; top:5px; left:0; opacity:0;
+		transition:all .4s;}
+	p{letter-spacing:0.3px; float:left; position:relative;}
+	p::after{top:50%; left:220px;}
+	ul{
+		display:none; float:left; margin-left:100px;
+		li{float:left; margin-right:30px;}
+		a{font-size:16px; text-decoration:none; color:#fff;
+			text-shadow:0 1px #b3b3b3; transition:all .4s;}
+		a:hover,
+		a:focus{color:#b2765b; text-shadow:none;}
+	}//ul
+	&.scrolled{
+		position:fixed; top:0; background:hsla(0,0%,15%,1);
+		margin-top:0;
+		h1{opacity:1; left:-45px;}
+		ul{display:block;}
+	}//&.scrolled
+}//#fixed_area
+
+main{
+	margin-top:80px;
+	section{
+		h3{font-size:24px; color:#b2765b; margin-bottom:20px;
+			padding-bottom:20px; border-bottom:1px solid #e1dcda;
+			position:relative;}
+		h3::after{top:-10px; left:-36px; transform:rotate(45deg);}	
+		article{margin-bottom:60px; line-height:24px;
+			font-family:"Helvetica";}
+		h4{font-size:22px; margin-bottom:30px;}
+		p{font-size:14px; color:#818181;}
+		img{width:100%; outline:1px solid #e0e0e0;
+			margin-bottom:20px;}	
+	}//section
+}//main
+
+footer{
+	border-top:1px solid #e2e2e2; padding:20px 0;
+	p{padding:40px 0; font-size:75%; line-height:1.2em;
+		background:url("../images/footer-logo.png") no-repeat 100% 50%;}
+	strong{font-weight:bold;}	
+	a{color:#606060; text-decoration:none;}
+}//footer
+
+
+/*화면의 너비가 1024px 이하인 경우 - 태블릿환경*/
+@media (max-width:1024px){
+	.inner{width:90%; margin:0 5%;}
+	.menu_btn{display:block;}
+	#fixed_area{
+		right:0; left:auto;  margin-top:0;
+		width:280px; height:100%; background:hsla(0,0%,15%,1);
+		transform:translateX(100%); visibility:hidden;
+		&.open{transform:translateX(0);}
+		&.scrolled{visibility:visible;}
+		.inner{width:80%; margin:0 10%; padding-top:80px;}
+		h1{position:static; opacity:1; height:36px;}
+		p{font-size:32px;}
+		p::after{top:110%; left:0px; width:100%;}
+		ul{display:block; margin:30px 0 0;}
+		ul li{float:none;}
+	}//#fixed_area
+}//@media
+
+/*화면의 너비가 768px 이하인 경우 - 모바일환경*/
+@media (max-width:768px){
+	header{
+		#logo a{top:0; left:50%; margin-left:-97px; z-index:1;}
+		#gnb{
+			position:relative; top:-30px;
+			li{float:none; margin:0 0 1px; padding:10px 30px;
+				border-top:1px solid #555; 
+				border-bottom:1px solid #555;
+				background-color:rgba(56,56,56,.3);
+				background-image:linear-gradient(rgba(56,56,56,.3),rgba(0,0,0,.5) 50%);}
+			li:hover{
+				background-image:linear-gradient(rgba(0,0,0,.5),rgba(56,56,56,.3) 50%);}	
+			li:first-child{border-radius:15px 15px 0 0;}
+			li:last-child{border-radius:0 0 15px 15px;}	
+			a{color:#fff; text-shadow:none;}		
+		}//#gnb
+	}//header
+
+	main{
+		.grid [class*="col-"]{float:none; margin-right:0;
+			width:100%;}
+		section img{width:90%; padding:10px; 
+			outline:1px solid #e0e0e0;}
+	}//main
+
+	footer p{background:none;}
+
+}//@media
+
+
