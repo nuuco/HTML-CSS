@@ -1,0 +1,256 @@
+@charset "utf-8";
+
+/* variables - SCSS에서 변수 사용하기*/
+//css 변수 설정 법은 따로 있음
+$img : url("../images/img-logo.png") no-repeat;
+$main1 : #e26d5d;
+$main2 : #5d9fca;
+
+//.img{background: $img;} <- 이렇게 사용
+
+
+/* base */
+body{background: url("../images/bg.jpg") no-repeat #182d40;
+	background-size: 100% auto; overflow: hidden;}
+a{display: inline-block; text-decoration: none; color: inherit;}
+.img{background: $img; text-indent: -9999px;}
+.font{font-family: 'Just Another Hand', cursive;
+	text-transform: uppercase; letter-spacing: -0.02em;}
+.icon::after{content: ''; display: inline-block; width: 10px; height: 17px;
+	background: $img 0 -727px; margin-left: 10px;}
+
+/* header */
+header{
+	position: fixed; width: 100%; height: 130px; z-index: 100;
+	background: #fff; bottom: 0; left: 0;
+	box-shadow: 0 -1px rgba(0, 0, 0, .1);
+	.title{position: absolute; top: 35px; left: 204px;
+		width: 173px; height: 60px;
+		background-position: 0 -453px;
+	}
+	.emblem{position: absolute; top: -70px; left: 15px;
+		width: 176px; height: 196px;
+	}
+	.menu_btn{
+		display: none; position: absolute; top: 0; right: 0; z-index: 1;
+		width: 50px; height: 46px; background: #67a6ce;
+		border-left: 1px solid #3b87b7;
+		box-shadow: inset 1px 0 #95afd3;
+		transition: all .3s;
+		&:hover{background: #79afd3;}
+		&::after{content: ''; display: block; width: 26px; height: 3px;
+			margin: 16px 0 0 12px; border-top: 9px double #fff; 
+			border-bottom: 3px solid #fff;}
+	}//end:.menu_btn
+}//end:header
+
+/* .sns */
+.sns{
+	float:right; padding: 28px 11px 11px; border-left: 1px solid #ccc;
+	li{display: inline-block;}
+	a{width: 24px; height: 24px;}
+	.fb{background-position: 0 -609px;}
+	.fb:hover{background-position: 0 -633px;}
+	.tw{background-position: 0 -561px;}
+	.tw:hover{background-position: 0 -585px;}
+	.rss{background-position: 0 -513px;}
+	.rss:hover{background-position: 0 -537px;}
+}//end:.sns
+
+
+#gnb{
+	float: right; font-size: 22px; line-height: 40px;
+	li{float: left; padding: 22px 11px 0; border-left: 1px solid #ddd;}
+	a{color: #5e5e5e; border-bottom: 2px solid #fff; transition: all .2s ease-in-out;}
+	a:hover{color: $main1; border-color: $main1;}
+	a::before{color: $main1;}
+
+	.sub{
+		position: absolute; bottom: 130px; margin-left: -11px;
+		opacity: 0; visibility: hidden;
+		transition: all .2s ease-in-out;
+		li{float: none; border: 0; margin-bottom: 1px;
+			background: #fff; padding: 7px 14px 3px;}
+		li:first-child{border-radius: 3px 3px 0 0;}
+		a{border: 0; }
+	}//end:.sub
+	li:hover .sub{opacity: 1; bottom: 130px; visibility: visible;}
+}//end:#gnb
+
+
+/* .counter */
+.counter{
+	ul{counter-reset: menu;}  //menu 라는 새로운 카운터를 생성함
+	li{counter-increment: menu;} 
+	li a::before{content: '0'counter(menu)' ';}
+	li li a:before{content: counters(menu, '.')' ';}  
+	//카운터 여러 개 중첩해 넣을 때 counters(카운터명, 구분기호) 
+	//li 안의 li 넘버링이 1.1, 1.2, 1.3 ... 이렇게 된다.
+}//end:.counter
+
+/* #language */
+#language{
+	position: absolute; right: 0; bottom: 0; background: $main1;
+	font: 14px/46px "Arial"; font-weight: bold; padding: 0 20px;
+	text-transform: uppercase; color: #eea79e;
+	border-radius: 2px 0 0;
+	li{display: inline-block;}
+	li::after{content: ' / '; padding: 0 2px;}
+	li:last-child::after{display: none;}
+	a{display: inline; padding-bottom: 2px; color: #fff; border-bottom: 1px solid transparent; transition: all .2s ease-in-out; }
+	a.active,
+	a:hover{border-color: #fff;}
+}//end:#language
+
+/* #main_view */
+#main_view{
+	position: relative;
+	.slider{
+		article{width: 100vw; height: 100vh;  //width: 100vw 하지 않는 이유는 스크롤 막대 영역까지가 100vw라 화면 끝이 조금 짤림
+			background: no-repeat center center; background-size: cover;
+		}
+		.view1{background-image: url("../images/slide-1.jpg");}
+		.view2{background-image: url("../images/slide-2.jpg");}
+		.view3{background-image: url("../images/slide-3.jpg");}
+		h3, a{position: absolute; right: 0; color: #fff;
+			transform: translateX(100%);
+			transition: all .3s ease-in-out;}
+		h3{font-size: 60px; bottom: 200px; padding: 12px 10px 4px;
+			background: rgba(0, 0, 0, .7);}
+		a{font-size: 26px; bottom: 150px; padding: 8px 6px 4px;
+			background: $main1;}
+		
+		[aria-hidden="false"]{
+			h3{transform: translateX(0); transition-delay: .3s;}
+			a{transform: translateX(0); transition-delay: .5s;}
+		}
+		
+	}//end:.slider
+	.bx-pager{
+		position: absolute; top: 70px; right: 20px; z-index: 60;
+		div{float: left; margin-left: 4px;}
+		a{width: 16px; height: 16px; background: rgba(0, 0, 0, .7);
+			border-radius: 50%; text-indent: -9999px;
+			box-shadow: 0 1px 1px rgba(255, 255, 255, .4),
+						0 1px 1px rgba(0, 0, 0, .5) inset;
+			position: relative;}
+		a.active::before{content: ''; position: absolute; width: 10px; height: 10px; top: 3px; left: 3px;
+			border-radius: 50%; background: $main1;}
+	}//end:.bx-pager
+	.bx-controls-direction{
+		display: none; position: absolute; top: 20px; left: 6%;
+		z-index: 60;
+		a{width: 40px; height: 39px; background: rgba(0, 0, 0, .7);
+			margin-right: 2px; transition: all .3s;}
+		a:hover{background: $main1;}
+		a::after{content: ''; display: block; width: 10px; height: 17px;
+			margin: 11px 0 0 15px; background: $img;}
+		.bx-next::after{background-position: 0 -727px;}
+		.bx-prev::after{background-position: 0 -745px;}
+	}//end:.bx-controls-direction
+}//end:#main_view
+
+/* #notice */
+#notice{
+	position: fixed; top: 0; left: 0; z-index: 70; width: 100%;
+	background: #fff; height: 46px; overflow: hidden;
+	box-shadow: 0 1px rgba(0, 0, 0, .1);
+	h3{background: $main2; height: 46px; line-height: 46px;
+		padding: 0 11px; font-size: 22px; color: #fff; float: left;}
+	ul{width: 150%;}
+	li{
+		float: left; border-right: 1px solid #ccc; padding: 0 14px;
+		a{font-family: "Helvetica", "Arial"; font-size: 14px;
+			line-height: 20px; padding: 13px 0; color: #5e5e5e;}
+		a:hover{color: $main2;}
+		span{color: #bbb; padding-left: 5px;}
+	}//end: li
+	.gradient-box{width: 200px; height: 46px; position: absolute;
+		top: 0; right: 0; background: linear-gradient(90deg, transparent, #fff);}
+}//end:#notice
+
+/* #main_menu */
+#main_menu{
+	display: none;
+	a{background: $main1; color: #fff; font-size: 22px;
+		display: block; padding: 16px 6% 12px;
+		border-top: 1px solid #ea9488; border-bottom: 1px solid #da4632;
+		transition: all .3s;}
+	a:hover{background: #e47566;}
+	.sub a{padding-left: 12%;}
+	a::after{float: right;}
+
+}
+
+/* footer */
+footer{
+	display: none; font-family: "Helvetica", "Arial"; color: #fff;
+	background: url("../images/pattern3.png") #182d40;
+	text-align: center; padding: 22px 6%; font-size: 3vw;
+	line-height: 2em;
+	.sns{position: static; float: none; padding: 0;}
+	p{margin-top: 20px;}
+}//end:footer
+
+/* Device-width : 0 ~ 1200px */
+@media (max-width: 1200px) {
+	.sns{position: absolute; bottom: 0; right: 200px; border: 0;}
+}//end: @media (max-width: 1200px)
+
+/* Device-width : 0 ~ 1024px (Tablet) */
+@media (max-width: 1024px) {
+	header{
+		.title{left: 25px;}
+		.emblem{display: none;}
+	}
+}//end: @media (max-width: 1024px)
+
+
+/* Device-width : 0 ~ 768px (Mobile) */
+@media (max-width: 768px) {
+	body{overflow-y: auto;}
+	header{
+		position: relative; height: 120px; padding-top: 46px;
+		box-shadow: 0 1px rgba(0, 0, 0, .1);
+		.title{width: 147px; height: 50px; top: 81px; left: 6%;
+			background-position: 0 -657px;}
+		.emblem{display: inline-block; width: 132px; height: 144px;
+			background-position: 0 -197px; top: 35px; left: auto; right: 6%;
+			z-index: 1;}
+		.menu_btn{display: inline-block;}
+		#gnb, .sns{display: none;}
+	}//end:header
+
+	#language{top: 0; bottom: auto; width: 94%; padding: 0 0 0 6%;
+		background-color: $main2; color: #95c1d6; border-radius: 0;}
+
+	#main_view{
+		.slider{
+			article{height: 350px;}
+			.view1{background-image: url("../images/slide-1-640x360.jpg");}
+			.view2{background-image: url("../images/slide-2-640x360.jpg");}
+			.view3{background-image: url("../images/slide-3-640x360.jpg");}
+			h3{font-size: 32px; bottom: 60px;}
+			a{bottom: 15px;}
+		}//end:.slider
+		.bx-pager{display: none;}
+		.bx-controls-direction{display: block;}
+
+	}//end:#main_view
+	
+	#notice{
+		position: relative; height: auto; overflow: hidden;
+		h3{transform: rotate(-90deg) translateX(-100%);
+			transform-origin: left top; text-align: right;
+			width: 200%;}
+		h3::after{display: none;}
+		ul{width: 100%; float: left; margin-top: -46px;}
+		li{float: none; margin-left: 46px; border-right: 0;
+			border-bottom: 1px solid #ccc;}
+		.gradient-box{display: none;}
+	}//end:#notice
+
+	#main_menu{display: block;}
+
+	footer{display: block;}
+}//end: @media (max-width: 768px)
