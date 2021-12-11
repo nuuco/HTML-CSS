@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SVG 로딩 애니메이션</title>
     <style>
+        @keyframes loader {
+            50% {transform: rotate(360deg);}
+        }
+
         #page-loder {
             width: 150px;
             height: 150px;
@@ -13,15 +17,36 @@
         #page-loder circle {
             fill: none;
             stroke-width: 10px;
+            stroke-linecap: round; /* 선 끝 모양 */
+            animation: loader 4s ease-in-out infinite;
+            transform-origin: 50% 50%;
         }
         /*
             svg 는 background, border 가 아닌,
             fill, stroke
         */
-        #page-loder circle:nth-child(1) {stroke: pink;}
-        #page-loder circle:nth-child(2) {stroke: salmon;}
-        #page-loder circle:nth-child(3) {stroke: peachpuff;}
-        #page-loder circle:nth-child(4) {stroke: indianred;}
+
+        #page-loder circle:nth-child(1) {
+            stroke: pink;
+            stroke-dasharray: 50; /* 선 배열, 값 하나 : 선 길이 50 간격도 50 */
+            animation-delay: 0.2s;
+        }
+        #page-loder circle:nth-child(2) {
+            stroke: salmon;
+            stroke-dasharray: 100;
+            animation-delay: 0.4s;
+        }
+        #page-loder circle:nth-child(3) {
+            stroke: peachpuff;
+            stroke-dasharray: 180;
+            animation-delay: 0.6s;
+        }
+        #page-loder circle:nth-child(4) {
+            stroke: indianred;
+            stroke-dasharray: 350;
+            stroke-dashoffset: -100; /* 선 전체 이동, 양수 : 왼쪽, 음수 : 오른쪽 */
+            animation-delay: 0.8s;
+        }
 
     </style>
 </head>
@@ -35,6 +60,10 @@
         svg 원을 그리는 데 필요한 값 3개
         원 중심점 좌표(x, y) 와 반지름 r
         cx = x좌표, cy = y좌표, r = 반지름
+    -->
+    <!--<line/>
+        선 그리기, 2점 필요, (x1, y1) (x2, y2)
+        x1, y1, x2, y2 필요
     -->
     <circle cx="75" cy="75" r="20"/>
     <circle cx="75" cy="75" r="35"/>
