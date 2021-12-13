@@ -96,7 +96,9 @@
         $(window).on('load', function(){
             $('#loading-wrapper').delay('3000').fadeOut();
         });
-        //-> 된다. on 함수는 DOM을 포함한 모든 문서가 준비되면 실행된다.
+        //-> 된다. 
+        //why? jQuery 버전 3.0 이상부터 load()함수가 제거되어서!
+        //on 함수 : DOM을 포함한 모든 문서가 준비되면 실행된다.
 
     </script>
 </body>
