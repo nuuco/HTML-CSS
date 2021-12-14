@@ -31,5 +31,12 @@
     <object>
         <embed src="./SVG_icon.svg" />
     </object>
+
+    <!-- SVG 의 스타일링 
+        SVG 파일의 스타일링을 HTML 문서로 옮겨오면 안 먹는다.
+        why? embed 는 iframe 처럼 독립된 컨텐츠(페이지)를 넣어주는 것
+        즉, 완전 다른 문서다. 새 문서, 다른 파일이다!
+        = svg 코드와 svg의 css 는 같은 파일에 있어야한다.
+    -->
 </body>
 </html>
