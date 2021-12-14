@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG 로딩 애니메이션 - 일러 백터 파일 html 구현</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <!-- SVG 로 저장하기
+        확장자 SVG 로 선택 ->  more options 
+        -> CSS Properties : Style Elements (레이어 네이밍이 id 로 들어옴)
+        -> 저장하기
+    -->
+    <!-- SVG 파일 불러오는 4가지 방법 
+        1. SVG 코드를 body 안에 복붙 : svg 코드가 짧거나 심플할 때
+        2. 이미지 불러오듯 <img src="~~.svg" alt="~" />
+        3-1. object 로 불러오기(1)
+            <object data="경로" type="image/svg+xml"></object>
+        3-2. object 로 불러우기(2) - 대체이미지 넣기 (= callback content)
+            <object src="경로" type="image/svg+xml">
+                <img src="~~.svg" alt="~" />
+            </object>
+        4.  <object>
+                <embed src="~~.svg" alt="~" />
+            </object>
+    -->
+    <object>
+        <embed src="./SVG_icon.svg" />
+    </object>
+</body>
+</html>
