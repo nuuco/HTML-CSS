@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+/*리셋코드 : 태그가 가지는 기본값을 0또는 none으로 설정(우선순위 때문에 가장 위에 써준다)*/
+*{margin: 0; padding: 0;}
+li{list-style:none;}/*리스트 항목의 블릿기호스타일*/
+
+
+#header{
+	width: 1140px;
+	/*블럭 요소(영역 자체)를 가운데 정렬 시키는 방법 - 마진을 이용한다.*/
+	margin: 0 auto; /*첫번째 값 : 위 아래, 두번째 값 : 좌우*/
+	height:122px;
+}
+
+#header #top{height:38px; border-bottom:1px solid #e4e4e4;}
+
+#header #sns{float:left;}
+#header #sns li{display:inline;} 
+
+#header #lan {float:right;}
+#header #lan li{display:inline;}
+#header #logo{clear:both; float:left; margin-top:22px;}
+
+
+
+#header #main_menu{float:right; margin:31px 71px 0 0;}
+#header #main_menu li{display:inline;}
+
+
+
+#main{
+	width: 1140px;
+	height:1210px;
+	/*블럭 요소(영역 자체)를 가운데 정렬 시키는 방법 - 마진을 이용한다.*/
+	margin: 0 auto; /*첫번째 값 : 위 아래, 두번째 값 : 좌우*/
+}
+
+#main #program {font-size:0;}
+#main #program li{display:inline;}
+
+
+#footer{
+	height: 350px;
+}
+
+#footer{height: 350px;}
+#footer #host{width: 1140px; margin: 0 auto; margin-top:16px;} 
+#footer #host1{float:left;}
+#footer #host2{float:right;}
+#footer #info{ background:#262b36;}
+#footer #info p{ width: 1140px; margin: 0 auto; height: 220px; clear:both; padding: 33px 0 0 150px;}
+
