@@ -8,9 +8,26 @@
 }
 
 p {
-    width: 300px;
+    width: 70%;
     @include ellipsis;
 }
 
 
 //배경 이미지 예제
+@mixin bg-img ($bg-url, $bg-position: center, $bg-size: contain, $bg-color: transparent) {
+    background-image: url($bg-url);
+    background-repeat: no-repeat;
+    background-position: $bg-position;
+    background-size: $bg-size;
+    background-color: $bg-color;
+}
+
+.bg {
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    @include bg-img('https://sass-lang.com/assets/img/logos/logo-b6e1ef6e.svg', center, contain, white);
+}
+
+
+

@@ -1,6 +1,17 @@
 p {
-  width: 300px;
+  width: 70%;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+}
+
+.bg {
+  margin: 0 auto;
+  width: 100px;
+  height: 100px;
+  background-image: url("https://sass-lang.com/assets/img/logos/logo-b6e1ef6e.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-color: white;
 }
