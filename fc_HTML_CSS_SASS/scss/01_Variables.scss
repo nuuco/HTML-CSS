@@ -1,0 +1,11 @@
+@charset "utf-8";
+
+$h1-size: 5em;
+$h1-color: red;
+$h1-align: center;
+
+h1 {
+    font-size: $h1-size;
+    color: $h1-color;
+    text-align: $h1-align;
+}
