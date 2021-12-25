@@ -1,0 +1,11 @@
+
+@function half-opacity($color){
+    $color: rgba($color, .5);
+    @return $color;
+}
+
+h1 {
+    font-size: 7em;
+    text-align: center;
+    color: half-opacity(red);
+}

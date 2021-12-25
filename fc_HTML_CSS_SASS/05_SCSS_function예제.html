@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCSS @function 예제</title>
+    <link rel="stylesheet" href="./scss/03_function.css">
+</head>
+<body>
+    <h1>SCSS @function 예제</h1>
+
+    <h2>code - in scss</h2>
+    <pre>
+        @function half-opacity($color){
+            $color: rgba($color, .5);
+            @return $color;
+        }
+        
+        h1 {
+            font-size: 10em;
+            text-align: center;
+            color: half-opacity(red);
+        }
+    </pre>
+</body>
+</html>
