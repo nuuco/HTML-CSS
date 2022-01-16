@@ -236,6 +236,8 @@ textarea::-webkit-outer-spin-button {
 
 .order-type-popup .icon {
   width: 100px;
+  height: auto;
+  color: #03c75a;
 }
 
 .order-type-popup .desc {
